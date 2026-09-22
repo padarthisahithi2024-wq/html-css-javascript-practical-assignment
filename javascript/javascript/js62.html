@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="js-lab.css">
+	<title>String Palindrome</title>
+</head>
+<body>
+	<main>
+		<h1>String palindrome</h1>
+		<p id="output"></p>
+		<script>
+			const text = "level";
+			const normalized = text.toLowerCase();
+			const reversed = normalized.split("").reverse().join("");
+			document.getElementById("output").textContent = `${text} is ${normalized === reversed ? "a palindrome" : "not a palindrome"}.`;
+		</script>
+	</main>
+</body>
+</html>

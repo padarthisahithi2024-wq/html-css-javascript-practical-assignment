@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="js-lab.css">
+
+    <style>
+        .tooltip {
+            position: relative;
+        }
+
+        .tip {
+            display: none;
+            position: absolute;
+            padding: 0.5rem;
+            background: #172033;
+            color: white;
+        }
+
+        .tooltip:hover .tip {
+            display: block;
+        }
+    </style>
+
+    <title>Dynamic Tooltip</title>
+</head>
+
+<body>
+
+    <main>
+
+        <h1>Dynamic Tooltip</h1>
+
+        <button id="button" class="tooltip">
+            Hover or click
+
+            <span class="tip">
+                Helpful information
+            </span>
+        </button>
+
+        <script>
+            const button = document.getElementById("button");
+
+            button.addEventListener("click", () => {
+                button.querySelector(".tip").style.display = "block";
+            });
+        </script>
+
+    </main>
+
+</body>
+
+</html>

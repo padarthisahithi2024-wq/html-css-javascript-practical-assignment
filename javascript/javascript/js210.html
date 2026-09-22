@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Hide Password</title>
+</head>
+<body>
+
+    <h2>Show / Hide Password</h2>
+
+    <input type="password" id="password">
+
+    <br><br>
+
+    <input type="checkbox" onclick="showPassword()">
+    Show Password
+
+    <script>
+        function showPassword() {
+
+            let password =
+                document.getElementById("password");
+
+            if (password.type == "password") {
+                password.type = "text";
+            }
+            else {
+                password.type = "password";
+            }
+        }
+    </script>
+
+</body>
+</html>

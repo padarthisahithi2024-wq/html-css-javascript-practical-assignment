@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Show and Hide Password</title>
+</head>
+<body>
+    <main>
+        <h1>Password visibility</h1>
+        <input id="password" type="password" value="secret123">
+        <button id="toggle">Show</button>
+        <script>
+            document.getElementById("toggle").addEventListener("click", () => {
+                const password = document.getElementById("password");
+                const hidden = password.type === "password";
+                password.type = hidden ? "text" : "password";
+                document.getElementById("toggle").textContent = hidden ? "Hide" : "Show";
+            });
+        </script>
+    </main>
+</body>
+</html>

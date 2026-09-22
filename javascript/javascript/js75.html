@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Table</title>
+</head>
+<body>
+
+<h2>Student Table</h2>
+
+<button onclick="createTable()">Create Table</button>
+
+<div id="tableContainer"></div>
+
+<script>
+function createTable() {
+    let students = [
+        ["Sahithi", 20, "CSE"],
+        ["Rahul", 21, "ECE"],
+        ["Priya", 20, "CSE"]
+    ];
+
+    let table = "<table border='1' cellpadding='10'>";
+    table += "<tr><th>Name</th><th>Age</th><th>Department</th></tr>";
+
+    for (let student of students) {
+        table += "<tr>";
+        table += "<td>" + student[0] + "</td>";
+        table += "<td>" + student[1] + "</td>";
+        table += "<td>" + student[2] + "</td>";
+        table += "</tr>";
+    }
+
+    table += "</table>";
+
+    document.getElementById("tableContainer").innerHTML = table;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Tabs Interface</title>
+</head>
+<body>
+    <main>
+        <h1>Tabs interface</h1>
+        <button data-tab="one">Overview</button>
+        <button data-tab="two">Reports</button>
+        <p id="panel">Overview content</p>
+        <script>
+            document.querySelectorAll("[data-tab]").forEach((button) => {
+                button.addEventListener("click", () => {
+                    document.getElementById("panel").textContent = button.dataset.tab === "one" ? "Overview content" : "Reports content";
+                });
+            });
+        </script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Event Delegation</title>
+</head>
+<body>
+    <main>
+        <h1>Event delegation</h1>
+        <ul id="list"><li><button data-name="Alpha">Alpha</button></li><li><button data-name="Beta">Beta</button></li></ul>
+        <p id="output"></p>
+        <script>
+            document.getElementById("list").addEventListener("click", (event) => {
+                if (event.target.matches("button")) document.getElementById("output").textContent = `Selected: ${event.target.dataset.name}`;
+            });
+        </script>
+    </main>
+</body>
+</html>

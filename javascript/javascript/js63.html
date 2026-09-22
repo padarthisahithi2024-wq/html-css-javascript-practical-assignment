@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="js-lab.css">
+	<title>Vowels and Consonants</title>
+</head>
+<body>
+	<main>
+		<h1>Count vowels and consonants</h1>
+		<p id="output"></p>
+		<script>
+			const text = "JavaScript is useful";
+			const letters = text.toLowerCase().match(/[a-z]/g) || [];
+			const vowels = letters.filter((letter) => "aeiou".includes(letter)).length;
+			document.getElementById("output").textContent = `Vowels: ${vowels}. Consonants: ${letters.length - vowels}.`;
+		</script>
+	</main>
+</body>
+</html>

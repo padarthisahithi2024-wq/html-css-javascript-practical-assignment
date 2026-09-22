@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Textarea Validation</title>
+</head>
+<body>
+
+    <h2>Textarea Validation</h2>
+
+    <textarea id="message"
+              rows="5"
+              cols="40"
+              placeholder="Enter your message"></textarea>
+
+    <br><br>
+
+    <button onclick="validateMessage()">Submit</button>
+
+    <script>
+        function validateMessage() {
+
+            let message = document.getElementById("message").value.trim();
+
+            if (message == "") {
+                alert("Message cannot be empty.");
+            }
+            else if (message.length < 10) {
+                alert("Message must contain at least 10 characters.");
+            }
+            else {
+                alert("Valid message.");
+            }
+        }
+    </script>
+
+</body>
+</html>

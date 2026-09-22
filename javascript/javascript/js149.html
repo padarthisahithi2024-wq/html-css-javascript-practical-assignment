@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Word Counter</title>
+</head>
+<body>
+    <main>
+        <h1>Live word counter</h1>
+        <textarea id="text"></textarea>
+        <p id="count">0 words</p>
+        <script>
+            document.getElementById("text").addEventListener("input", (event) => {
+                const value = event.target.value.trim();
+                document.getElementById("count").textContent = `${value ? value.split(/\s+/).length : 0} words`;
+            });
+        </script>
+    </main>
+</body>
+</html>

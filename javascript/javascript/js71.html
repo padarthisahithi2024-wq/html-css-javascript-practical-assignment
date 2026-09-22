@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="js-lab.css">
+	<title>Change Multiple Elements</title>
+</head>
+<body>
+	<main>
+		<h1 class="item">First heading</h1>
+		<p class="item">First paragraph</p>
+		<button id="change">Change all</button>
+		<script>
+			document.getElementById("change").addEventListener("click", () => {
+				document.querySelectorAll(".item").forEach((element) => {
+					element.textContent = "Updated by JavaScript";
+					element.style.color = "#4353ff";
+				});
+			});
+		</script>
+	</main>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+</head>
+<body>
+
+    <h2>Student Registration Form</h2>
+
+    <form onsubmit="return validateForm()">
+
+        Name:
+        <input type="text" id="name">
+        <br><br>
+
+        Age:
+        <input type="number" id="age">
+        <br><br>
+
+        Mobile:
+        <input type="text" id="mobile">
+        <br><br>
+
+        Email:
+        <input type="text" id="email">
+        <br><br>
+
+        Password:
+        <input type="password" id="password">
+        <br><br>
+
+        Confirm Password:
+        <input type="password" id="confirmPassword">
+        <br><br>
+
+        Date of Birth:
+        <input type="date" id="dob">
+        <br><br>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <script>
+        function validateForm() {
+
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let mobile = document.getElementById("mobile").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            let dob = document.getElementById("dob").value;
+
+            let namePattern = /^[A-Za-z ]+$/;
+            let mobilePattern = /^[0-9]{10}$/;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (name == "" || !namePattern.test(name)) {
+                alert("Enter a valid name using alphabets only.");
+                return false;
+            }
+
+            if (age == "" || age < 1 || age > 100) {
+                alert("Enter a valid age.");
+                return false;
+            }
+
+            if (!mobilePattern.test(mobile)) {
+                alert("Mobile number must contain exactly 10 digits.");
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert("Enter a valid email address.");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password must contain at least 6 characters.");
+                return false;
+            }
+
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            if (dob == "") {
+                alert("Please select your date of birth.");
+                return false;
+            }
+
+            alert("Registration successful!");
+            return true;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phone Regex Validation</title>
+</head>
+<body>
+
+    <h2>Phone Number Validation</h2>
+
+    <input type="text" id="phone" placeholder="Enter 10 digit number">
+
+    <button onclick="validatePhone()">Validate</button>
+
+    <script>
+        function validatePhone() {
+
+            let phone = document.getElementById("phone").value;
+
+            let pattern = /^[0-9]{10}$/;
+
+            if (pattern.test(phone)) {
+                alert("Valid phone number.");
+            }
+            else {
+                alert("Phone number must contain 10 digits.");
+            }
+        }
+    </script>
+
+</body>
+</html>

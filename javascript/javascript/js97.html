@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js-lab.css">
+<title>Dynamic Validation Errors</title>
+</head>
+<body>
+<main>
+<h1>Dynamic validation messages</h1>
+<form id="form">
+<label>Email<input id="email" type="email">
+</label>
+<p id="emailError">
+</p>
+<label>Password<input id="password" type="password">
+</label>
+<p id="passwordError">
+</p>
+<button>Validate</button>
+</form>
+<script>document.getElementById("form").addEventListener("submit",(event)=>{event.preventDefault();const email=document.getElementById("email");const password=document.getElementById("password");document.getElementById("emailError").textContent=email.validity.valid?"":"Enter a valid email.";document.getElementById("passwordError").textContent=password.value.length>=8?"":"Password must have 8 characters.";});</script>
+</main>
+</body>
+</html>
+

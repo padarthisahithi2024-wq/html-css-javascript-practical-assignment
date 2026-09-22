@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="js-lab.css">
+	<title>Add Elements</title>
+</head>
+<body>
+	<main>
+		<h1>Add elements dynamically</h1>
+		<button id="add">Add item</button>
+		<ul id="list"></ul>
+		<script>
+			document.getElementById("add").addEventListener("click", () => {
+				const item = document.createElement("li");
+				item.textContent = `New item ${document.querySelectorAll("#list li").length + 1}`;
+				document.getElementById("list").appendChild(item);
+			});
+		</script>
+	</main>
+</body>
+</html>

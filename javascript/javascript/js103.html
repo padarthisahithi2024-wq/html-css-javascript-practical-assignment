@@ -1,0 +1,20 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js-lab.css">
+<title>Session Storage</title>
+</head>
+<body>
+<main>
+<h1>Session storage</h1>
+<input id="value" placeholder="Save for this session">
+<button id="save">Save</button>
+<p id="output">
+</p>
+<script>save.onclick=()=>{sessionStorage.setItem("value",value.value);output.textContent=`Stored: ${sessionStorage.getItem("value")}`;};</script>
+</main>
+</body>
+</html>
+

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="js-lab.css">
+	<title>Email Validation</title>
+</head>
+<body>
+	<main>
+		<h1>Email validation with a regular expression</h1>
+		<p id="output"></p>
+		<script>
+			const email = "student@example.com";
+			const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			document.getElementById("output").textContent = `${email} is ${pattern.test(email) ? "valid" : "invalid"}.`;
+		</script>
+	</main>
+</body>
+</html>

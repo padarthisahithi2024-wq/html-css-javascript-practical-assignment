@@ -1,0 +1,54 @@
+body {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font: 16px/1.6 Arial, sans-serif;
+    color: #172033;
+    background: #f6f8fb;
+}
+
+main {
+    padding: 1.5rem;
+    border: 1px solid #e3e8ef;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 8px 24px #1720330d;
+}
+
+button,
+input,
+select,
+textarea {
+    padding: .65rem;
+    font: inherit;
+    border: 1px solid #cbd3df;
+    border-radius: 6px;
+}
+
+button {
+    cursor: pointer;
+    color: white;
+    background: #4353ff;
+    border-color: #4353ff;
+}
+
+.output {
+    min-height: 1.6em;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+form {
+    display: grid;
+    gap: .8rem;
+    max-width: 520px;
+}
+
+label {
+    display: grid;
+    gap: .3rem;
+}
+
+li {
+    margin: .4rem 0;
+}

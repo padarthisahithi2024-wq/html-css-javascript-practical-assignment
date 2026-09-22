@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20. Multi-Page Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="brand">WEB STORAGE LAB</div>
+    <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Programs</a>
+    </div>
+</div>
+
+<section class="hero">
+    <h1>20. Multi-Page Form Using sessionStorage</h1>
+    <p>Web Storage • Working JavaScript Demonstration</p>
+</section>
+
+<main class="container">
+<section class="card">
+
+<h2>Step 1: Personal Information</h2>
+
+<div class="demo">
+    <input id="name" placeholder="Enter name">
+    <input id="email" placeholder="Enter email">
+    <button onclick="nextPage()">Next Page</button>
+    <div id="out" class="output"></div>
+</div>
+
+<div class="page-nav">
+    <a href="19.html">‹ Prev</a>
+    <a class="middle" href="index.html">☰ All Programs</a>
+    <a href="21.html">Next ›</a>
+</div>
+
+</section>
+</main>
+
+<footer>Web Storage Project • Program 20 of 25</footer>
+
+<script>
+function nextPage() {
+    sessionStorage.setItem(
+        "name",
+        document.getElementById("name").value
+    );
+
+    sessionStorage.setItem(
+        "email",
+        document.getElementById("email").value
+    );
+
+    document.getElementById("out").textContent =
+        "Step 1 data saved in sessionStorage.";
+}
+</script>
+
+</body>
+</html>

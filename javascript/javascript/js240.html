@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Offline Detection</title>
+</head>
+<body>
+
+<h2>Internet Connection Status</h2>
+
+<h3 id="status"></h3>
+
+<script>
+function checkConnection() {
+
+    if (navigator.onLine) {
+        document.getElementById("status").innerHTML =
+            "You are Online";
+    } else {
+        document.getElementById("status").innerHTML =
+            "You are Offline";
+    }
+}
+
+checkConnection();
+</script>
+
+</body>
+</html>

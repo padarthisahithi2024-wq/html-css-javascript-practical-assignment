@@ -1,0 +1,18 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js-lab.css">
+<title>Countdown</title>
+</head>
+<body>
+<main>
+<h1>Countdown timer</h1>
+<p id="time">10</p>
+<button id="start">Start</button>
+<script>let n=10;start.onclick=()=>{const timer=setInterval(()=>{time.textContent=--n;if(n<=0)clearInterval(timer);},1000);};</script>
+</main>
+</body>
+</html>
+

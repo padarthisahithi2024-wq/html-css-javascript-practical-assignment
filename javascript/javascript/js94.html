@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js-lab.css">
+<title>Signup Confirmation</title>
+</head>
+<body>
+<main>
+<h1>Signup</h1>
+<form id="form">
+<label>Email<input type="email" required>
+</label>
+<label>Password<input id="password" type="password" required>
+</label>
+<label>Confirm password<input id="confirm" type="password" required>
+</label>
+<button>Sign up</button>
+</form>
+<p id="output">
+</p>
+<script>document.getElementById("form").addEventListener("submit",(event)=>{event.preventDefault();document.getElementById("output").textContent=document.getElementById("password").value===document.getElementById("confirm").value?"Signup successful.":"Passwords do not match.";});</script>
+</main>
+</body>
+</html>
+

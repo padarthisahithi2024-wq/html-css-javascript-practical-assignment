@@ -1,0 +1,23 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Dynamic Style</title>
+</head>
+<body>
+    <main>
+        <p id="box">Dynamic style</p>
+        <button id="change">Change style</button>
+        <script>
+            document.getElementById("change").addEventListener("click", () => {
+                const box = document.getElementById("box");
+                box.style.color = "#4353ff";
+                box.style.fontSize = "2rem";
+            });
+        </script>
+    </main>
+</body>
+</html>
+

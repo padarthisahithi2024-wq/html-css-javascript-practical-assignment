@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyboard Typing Test</title>
+</head>
+<body>
+
+    <h2>Simple Keyboard Typing Test</h2>
+
+    <p>
+        Type this sentence:
+    </p>
+
+    <p>
+        JavaScript makes webpages interactive.
+    </p>
+
+    <textarea
+        id="typing"
+        rows="5"
+        cols="50"
+        placeholder="Start typing here...">
+    </textarea>
+
+    <p>
+        Characters:
+        <span id="count">0</span>
+    </p>
+
+    <p id="result"></p>
+
+    <script>
+        const typing = document.getElementById("typing");
+
+        const sentence =
+            "JavaScript makes webpages interactive.";
+
+        typing.addEventListener("input", function() {
+
+            document.getElementById("count").textContent =
+                typing.value.length;
+
+            if (typing.value === sentence) {
+
+                document.getElementById("result").textContent =
+                    "Typing test completed!";
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js-lab.css">
+<title>Power of a Number</title>
+</head>
+<body>
+<main>
+<h1>Power of a number</h1>
+<p class="output" id="output">
+</p>
+<script>
+    const output = document.querySelector(".output") || (() => {
+        const element = document.createElement("p");
+        element.className = "output";
+        document.querySelector("main").append(element);
+        return element;
+    })();
+
+    document.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+            output.textContent = `${button.textContent.trim()} clicked.`;
+        });
+    });
+
+    document.querySelectorAll("form").forEach((form) => {
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            output.textContent = "Form submitted successfully.";
+        });
+    });
+</script>
+</main>
+</body>
+</html>
+
+
+

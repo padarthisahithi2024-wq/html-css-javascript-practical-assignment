@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9. Student Record System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="brand">WEB STORAGE LAB</div>
+    <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Programs</a>
+    </div>
+</div>
+
+<section class="hero">
+    <h1>9. Student Record System Using localStorage</h1>
+    <p>Web Storage • Working JavaScript Demonstration</p>
+</section>
+
+<main class="container">
+<section class="card">
+
+<h2>Program Description</h2>
+<p>Adds and displays student records using localStorage.</p>
+
+<div class="demo">
+    <input id="name" placeholder="Student name">
+    <input id="roll" placeholder="Roll number">
+    <button onclick="addStudent()">Add Student</button>
+    <button onclick="showStudents()">Display Students</button>
+    <div id="out" class="output"></div>
+</div>
+
+<div class="page-nav">
+    <a href="08.html">‹ Prev</a>
+    <a class="middle" href="index.html">☰ All Programs</a>
+    <a href="10.html">Next ›</a>
+</div>
+
+</section>
+</main>
+
+<footer>Web Storage Project • Program 9 of 25</footer>
+
+<script>
+function addStudent() {
+    let students =
+        JSON.parse(localStorage.getItem("students")) || [];
+
+    let student = {
+        name: document.getElementById("name").value,
+        roll: document.getElementById("roll").value
+    };
+
+    students.push(student);
+
+    localStorage.setItem(
+        "students",
+        JSON.stringify(students)
+    );
+
+    document.getElementById("out").textContent =
+        "Student added successfully.";
+}
+
+function showStudents() {
+    let students =
+        JSON.parse(localStorage.getItem("students")) || [];
+
+    document.getElementById("out").innerHTML =
+        students.map(function(student) {
+            return student.name + " - " + student.roll;
+        }).join("<br>");
+}
+</script>
+
+</body>
+</html>

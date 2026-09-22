@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="js-lab.css">
+	<title>Regular Expressions</title>
+</head>
+<body>
+	<main>
+		<h1>Regular expressions</h1>
+		<p id="output"></p>
+		<script>
+			const text = "Order ID: JS-2048";
+			const orderId = text.match(/JS-\d+/)?.[0] || "No match";
+			document.getElementById("output").textContent = `Matched value: ${orderId}`;
+		</script>
+	</main>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prime Number</title>
+</head>
+<body>
+    <h1>Prime number check</h1>
+    <p id="output"></p>
+    <script>
+        const number = 29;
+        let isPrime = number >= 2;
+        for (let divisor = 2; divisor <= Math.sqrt(number) && isPrime; divisor += 1) {
+            if (number % divisor === 0) {
+                isPrime = false;
+            }
+        }
+        document.getElementById("output").textContent = `${number} is ${isPrime ? "prime" : "not prime"}.`;
+    </script>
+</body>
+</html>

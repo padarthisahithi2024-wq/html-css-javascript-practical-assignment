@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Store a Username Using localStorage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+<div class="topbar">
+    <div class="brand">WEB STORAGE LAB</div>
+    <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Programs</a>
+    </div>
+</div>
+
+<section class="hero">
+    <h1>1. Store a Username Using localStorage</h1>
+    <p>Web Storage • Working JavaScript Demonstration</p>
+</section>
+
+<main class="container">
+<section class="card">
+
+<h2>Program Description</h2>
+<p>Stores a username in the browser's localStorage.</p>
+
+<div class="demo">
+    <input id="name" placeholder="Enter username">
+    <button onclick="save()">Save Username</button>
+    <div id="out" class="output"></div>
+</div>
+
+<div class="page-nav">
+    <a class="disabled" href="#">‹ Prev</a>
+    <a class="middle" href="index.html">☰ All Programs</a>
+    <a href="02.html">Next ›</a>
+</div>
+
+</section>
+</main>
+
+<footer>Web Storage Project • Program 1 of 25</footer>
+
+<script>
+function save() {
+    let v = document.getElementById("name").value;
+    localStorage.setItem("username", v);
+    document.getElementById("out").textContent =
+        "Username saved successfully.";
+}
+</script>
+
+</body>
+</html>

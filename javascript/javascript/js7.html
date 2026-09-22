@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fibonacci Series</title>
+</head>
+<body>
+    <h1>Fibonacci series</h1>
+    <p id="output"></p>
+    <script>
+        const count = 10;
+        const series = [0, 1];
+        while (series.length < count) {
+            const nextValue = series.at(-1) + series.at(-2);
+            series.push(nextValue);
+        }
+        document.getElementById("output").textContent = series.slice(0, count).join(", ");
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="js-lab.css">
+	<title>Query Selectors</title>
+</head>
+<body>
+	<main>
+		<h1>querySelector and querySelectorAll</h1>
+		<p class="item">Alpha</p>
+		<p class="item">Beta</p>
+		<button id="show">Highlight</button>
+		<script>
+			document.querySelector("#show").addEventListener("click", () => {
+				document.querySelector(".item").style.color = "#4353ff";
+				document.querySelectorAll(".item").forEach((item) => {
+					item.style.fontWeight = "bold";
+				});
+			});
+		</script>
+	</main>
+</body>
+</html>

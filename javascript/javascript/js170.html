@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Event Handlers</title>
+</head>
+<body>
+
+    <h2>Multiple Buttons</h2>
+
+    <button onclick="showMessage()">Message</button>
+
+    <button onclick="changeColor()">Color</button>
+
+    <button onclick="showDate()">Date</button>
+
+    <p id="output"></p>
+
+    <script>
+        function showMessage() {
+            document.getElementById("output").textContent =
+                "Hello! Button clicked.";
+        }
+
+        function changeColor() {
+            document.body.style.backgroundColor = "lightyellow";
+        }
+
+        function showDate() {
+            document.getElementById("output").textContent =
+                new Date().toLocaleDateString();
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real Time Validation</title>
+</head>
+<body>
+
+    <h2>Real-Time Validation</h2>
+
+    Name:
+    <input type="text" id="name" oninput="validateName()">
+    <span id="error"></span>
+
+    <script>
+        function validateName() {
+
+            let name = document.getElementById("name").value;
+            let error = document.getElementById("error");
+
+            let pattern = /^[A-Za-z ]+$/;
+
+            if (name == "") {
+                error.innerHTML = " Enter name";
+            }
+            else if (!pattern.test(name)) {
+                error.innerHTML = " Alphabets only";
+            }
+            else {
+                error.innerHTML = " Valid";
+            }
+        }
+    </script>
+
+</body>
+</html>

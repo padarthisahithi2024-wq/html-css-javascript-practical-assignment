@@ -1,0 +1,20 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js-lab.css">
+<title>BMI Calculator</title>
+</head>
+<body>
+<main>
+<h1>BMI calculator</h1>
+<input id="weight" type="number" placeholder="kg">
+<input id="height" type="number" placeholder="metres">
+<button onclick="output.textContent=(Number(weight.value)/(Number(height.value)**2)).toFixed(2)">Calculate</button>
+<p id="output">
+</p>
+</main>
+</body>
+</html>
+

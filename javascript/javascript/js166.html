@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Event</title>
+</head>
+<body>
+
+    <h2>Submit Event</h2>
+
+    <form id="form">
+        <input type="text" placeholder="Enter your name" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="output"></p>
+
+    <script>
+        document.getElementById("form").addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
+
+                document.getElementById("output").textContent =
+                    "Form submitted successfully!";
+            }
+        );
+    </script>
+
+</body>
+</html>

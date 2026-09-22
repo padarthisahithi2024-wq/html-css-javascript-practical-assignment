@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Accordion</title>
+</head>
+<body>
+    <main>
+        <h1>Accordion</h1>
+        <button class="question">What is JavaScript?</button>
+        <p class="answer" hidden>JavaScript adds behavior to web pages.</p>
+        <button class="question">What is the DOM?</button>
+        <p class="answer" hidden>The DOM represents a document as objects.</p>
+        <script>
+            document.querySelectorAll(".question").forEach((question) => {
+                question.addEventListener("click", () => {
+                    question.nextElementSibling.hidden = !question.nextElementSibling.hidden;
+                });
+            });
+        </script>
+    </main>
+</body>
+</html>

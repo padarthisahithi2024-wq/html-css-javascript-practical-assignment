@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Even or Odd</title>
+</head>
+<body>
+    <h1>Even or odd</h1>
+    <p id="output"></p>
+    <script>
+        const number = 24;
+        const result = number % 2 === 0 ? "Even" : "Odd";
+        document.getElementById("output").textContent = `${number} is ${result}.`;
+    </script>
+</body>
+</html>

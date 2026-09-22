@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Delete an Item from localStorage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="brand">WEB STORAGE LAB</div>
+    <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Programs</a>
+    </div>
+</div>
+
+<section class="hero">
+    <h1>4. Delete an Item from localStorage</h1>
+    <p>Web Storage • Working JavaScript Demonstration</p>
+</section>
+
+<main class="container">
+<section class="card">
+
+<h2>Program Description</h2>
+<p>Deletes the username from localStorage.</p>
+
+<div class="demo">
+    <button onclick="deleteData()">Delete Username</button>
+    <div id="out" class="output"></div>
+</div>
+
+<div class="page-nav">
+    <a href="03.html">‹ Prev</a>
+    <a class="middle" href="index.html">☰ All Programs</a>
+    <a href="05.html">Next ›</a>
+</div>
+
+</section>
+</main>
+
+<footer>Web Storage Project • Program 4 of 25</footer>
+
+<script>
+function deleteData() {
+    localStorage.removeItem("username");
+
+    document.getElementById("out").textContent =
+        "Username deleted successfully.";
+}
+</script>
+
+</body>
+</html>

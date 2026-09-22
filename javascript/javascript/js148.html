@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="js-lab.css">
+
+    <title>Character Counter</title>
+</head>
+
+<body>
+
+    <main>
+        <h1>Live character counter</h1>
+
+        <textarea id="text" maxlength="100"></textarea>
+
+        <p id="count">0 / 100</p>
+
+        <script>
+            text.addEventListener("input", () => {
+                count.textContent = `${text.value.length} / 100`;
+            });
+        </script>
+    </main>
+
+</body>
+
+</html>

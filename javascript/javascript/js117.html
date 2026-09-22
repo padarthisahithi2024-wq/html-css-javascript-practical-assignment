@@ -1,0 +1,21 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js-lab.css">
+<title>Notes Storage</title>
+</head>
+<body>
+<main>
+<h1>Notes application</h1>
+<textarea id="note">
+</textarea>
+<button onclick="localStorage.setItem('note',note.value);output.textContent='Saved.'">Save</button>
+<button onclick="note.value=localStorage.getItem('note')||''">Load</button>
+<p id="output">
+</p>
+</main>
+</body>
+</html>
+

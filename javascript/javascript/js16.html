@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    <h1>Arrow functions</h1>
+    <p id="output"></p>
+    <script>
+        const square = (number) => number * number;
+        const double = (number) => number * 2;
+        const values = [2, 4, 6];
+        const squares = values.map(square);
+        const doubles = values.map(double);
+        document.getElementById("output").textContent = `Squares: ${squares.join(", ")}. Doubles: ${doubles.join(", ")}.`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gender Validation</title>
+</head>
+<body>
+
+    <h2>Gender Validation</h2>
+
+    <label>
+        <input type="radio" name="gender" value="Male">
+        Male
+    </label>
+
+    <label>
+        <input type="radio" name="gender" value="Female">
+        Female
+    </label>
+
+    <label>
+        <input type="radio" name="gender" value="Other">
+        Other
+    </label>
+
+    <br><br>
+
+    <button onclick="validateGender()">Submit</button>
+
+    <script>
+        function validateGender() {
+
+            let gender = document.querySelector(
+                'input[name="gender"]:checked'
+            );
+
+            if (gender == null) {
+                alert("Please select your gender.");
+            }
+            else {
+                alert("Gender selected: " + gender.value);
+            }
+        }
+    </script>
+
+</body>
+</html>

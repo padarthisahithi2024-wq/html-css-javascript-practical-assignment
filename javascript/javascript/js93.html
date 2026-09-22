@@ -1,0 +1,19 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js-lab.css">
+<title>Password Strength</title>
+</head>
+<body>
+<main>
+<h1>Password strength checker</h1>
+<input id="password" type="password">
+<p id="output">
+</p>
+<script>document.getElementById("password").addEventListener("input",(event)=>{const value=event.target.value;let score=0;if(value.length>=8)score++;if(/[A-Z]/.test(value))score++;if(/[0-9]/.test(value))score++;if(/[^A-Za-z0-9]/.test(value))score++;document.getElementById("output").textContent=`Strength: ${["Weak","Fair","Good","Strong","Very strong"][score]}`;});</script>
+</main>
+</body>
+</html>
+

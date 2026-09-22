@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Event Bubbling and Capturing</title>
+</head>
+<body>
+    <main id="outer">
+        <h1>Event bubbling and capturing</h1>
+        <button id="inner">Click nested button</button>
+        <p id="output"></p>
+        <script>
+            const output = document.getElementById("output");
+            document.getElementById("outer").addEventListener("click", () => { output.textContent += " Outer bubble."; });
+            document.getElementById("outer").addEventListener("click", () => { output.textContent = "Outer capture."; }, true);
+            document.getElementById("inner").addEventListener("click", () => { output.textContent += " Inner target."; });
+        </script>
+    </main>
+</body>
+</html>

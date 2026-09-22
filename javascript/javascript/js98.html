@@ -1,0 +1,19 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js-lab.css">
+<title>Window Object</title>
+</head>
+<body>
+<main>
+<h1>Window object</h1>
+<p id="output">
+</p>
+<button id="show">Show window details</button>
+<script>document.getElementById("show").addEventListener("click",()=>{document.getElementById("output").textContent=`Width: ${window.innerWidth}, height: ${window.innerHeight}`;});</script>
+</main>
+</body>
+</html>
+

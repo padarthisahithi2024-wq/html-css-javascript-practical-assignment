@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Factorial</title>
+</head>
+<body>
+    <h1>Factorial of a number</h1>
+    <p id="output"></p>
+    <script>
+        const number = 5;
+        let factorial = 1;
+        for (let value = 2; value <= number; value += 1) {
+            factorial *= value;
+        }
+        document.getElementById("output").textContent = `${number}! = ${factorial}`;
+    </script>
+</body>
+</html>

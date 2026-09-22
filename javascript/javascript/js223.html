@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validation Without Reload</title>
+</head>
+<body>
+
+    <h2>Form Validation</h2>
+
+    <form id="myForm">
+
+        Name:
+        <input type="text" id="name">
+
+        <br><br>
+
+        Email:
+        <input type="text" id="email">
+
+        <br><br>
+
+        Mobile:
+        <input type="text" id="mobile">
+
+        <br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <p id="error"></p>
+    <p id="success"></p>
+
+    <script>
+
+        document.getElementById("myForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            let name =
+                document.getElementById("name").value;
+
+            let email =
+                document.getElementById("email").value;
+
+            let mobile =
+                document.getElementById("mobile").value;
+
+            let error =
+                document.getElementById("error");
+
+            let success =
+                document.getElementById("success");
+
+            error.innerHTML = "";
+            success.innerHTML = "";
+
+            if (name == "") {
+                error.innerHTML = "Name is required.";
+                return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                error.innerHTML = "Enter a valid email.";
+                return;
+            }
+
+            if (!/^[0-9]{10}$/.test(mobile)) {
+                error.innerHTML =
+                    "Mobile number must contain 10 digits.";
+                return;
+            }
+
+            success.innerHTML =
+                "Form submitted successfully without page reload.";
+
+        });
+
+    </script>
+
+</body>
+</html>

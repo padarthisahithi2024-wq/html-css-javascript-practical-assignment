@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15. Preferred Font Size</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="brand">WEB STORAGE LAB</div>
+    <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Programs</a>
+    </div>
+</div>
+
+<section class="hero">
+    <h1>15. Save Preferred Font Size</h1>
+    <p>Web Storage • Working JavaScript Demonstration</p>
+</section>
+
+<main class="container">
+<section class="card" id="content">
+
+<h2>Program Description</h2>
+<p>Choose a font size and save the preference in localStorage.</p>
+
+<div class="demo">
+    <button onclick="setSize('16px')">Small</button>
+    <button onclick="setSize('22px')">Medium</button>
+    <button onclick="setSize('28px')">Large</button>
+    <div id="out" class="output"></div>
+</div>
+
+<div class="page-nav">
+    <a href="14.html">‹ Prev</a>
+    <a class="middle" href="index.html">☰ All Programs</a>
+    <a href="16.html">Next ›</a>
+</div>
+
+</section>
+</main>
+
+<footer>Web Storage Project • Program 15 of 25</footer>
+
+<script>
+function setSize(size) {
+    document.getElementById("content").style.fontSize = size;
+
+    localStorage.setItem("fontSize", size);
+
+    document.getElementById("out").textContent =
+        "Font size saved as " + size;
+}
+
+let savedSize = localStorage.getItem("fontSize");
+
+if (savedSize) {
+    document.getElementById("content").style.fontSize =
+        savedSize;
+}
+</script>
+
+</body>
+</html>

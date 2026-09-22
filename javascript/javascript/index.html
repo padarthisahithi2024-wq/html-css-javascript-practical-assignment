@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Practical Programs</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 16px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .top-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .top-buttons button {
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+        }
+
+        .top-buttons button:hover {
+            background: #1d4ed8;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 25px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            background: #111827;
+            color: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .program-list {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .program {
+            background: white;
+            padding: 18px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            transition: 0.2s;
+        }
+
+        .program:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 5px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .program-number {
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        .program-title {
+            min-height: 45px;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .open-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #16a34a;
+            color: white;
+            padding: 9px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .open-btn:hover {
+            background: #15803d;
+        }
+
+        .not-found {
+            color: #dc2626;
+            font-size: 13px;
+            margin-top: 8px;
+            display: none;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Practical Programs</h1>
+        <p>JavaScript Lab Experiments - 1 to 272</p>
+    </header>
+
+    <div class="container">
+
+        <div class="top-buttons">
+            <button onclick="showAll()">
+                Show All Programs
+            </button>
+
+            <button onclick="showSection('basic')">
+                Basic JavaScript
+            </button>
+
+            <button onclick="showSection('dom')">
+                DOM
+            </button>
+
+            <button onclick="showSection('events')">
+                Events
+            </button>
+
+            <button onclick="showSection('forms')">
+                Forms
+            </button>
+
+            <button onclick="showSection('browser')">
+                Browser
+            </button>
+
+            <button onclick="showSection('storage')">
+                Web Storage
+            </button>
+        </div>
+
+        <input
+            type="text"
+            id="search"
+            class="search-box"
+            placeholder="Search JavaScript programs..."
+            onkeyup="searchPrograms()"
+        >
+
+        <div id="programContainer"></div>
+
+    </div>
+
+    <footer>
+        <p>
+            JavaScript Practical Programs
+        </p>
+
+        <p>
+            js1.html - js272.html
+        </p>
+    </footer>
+
+    <script>
+
+        /*
+         * Program titles are taken from the assignment list.
+         * Every program opens:
+         *
+         * js1.html
+         * js2.html
+         * ...
+         * js272.html
+         */
+
+        const programs = [
+
+            "Display Hello World",
+            "Perform arithmetic operations",
+            "Find the largest of three numbers",
+            "Check whether a number is even or odd",
+            "Check whether a number is positive, negative, or zero",
+            "Find the factorial of a number",
+            "Generate the Fibonacci series",
+            "Check whether a number is prime",
+            "Check whether a number is a palindrome",
+            "Reverse a number",
+            "Find the sum of digits of a number",
+            "Find the largest and smallest element in an array",
+            "Sort an array",
+            "Find the sum and average of array elements",
+            "Demonstrate JavaScript functions",
+            "Use arrow functions",
+            "Demonstrate strings and string methods",
+            "Demonstrate arrays and array methods",
+            "Demonstrate objects in JavaScript",
+            "Demonstrate Date and Math objects",
+
+            "Change text using JavaScript",
+            "Change webpage background color",
+            "Create a button click event",
+            "Show and hide an HTML element",
+            "Change an image using a button",
+            "Create a digital clock",
+            "Create a simple calculator",
+            "Create a number guessing game",
+            "Create form validation",
+            "Validate name, email, phone and password",
+            "Create a to-do list",
+            "Create a quiz application",
+            "Create a counter application",
+            "Create a stopwatch",
+            "Create a countdown timer",
+
+            "Demonstrate ES6 let, const, template literals and destructuring",
+            "Demonstrate spread and rest operators",
+            "Demonstrate classes and objects",
+            "Demonstrate inheritance",
+            "Demonstrate callbacks, promises and async/await",
+            "Fetch data using Fetch API",
+            "Display API data dynamically",
+            "Store and retrieve data using localStorage",
+            "Create a responsive login form",
+            "Create a complete interactive webpage",
+
+            "Swap two numbers",
+            "Find GCD of two numbers",
+            "Find LCM of two numbers",
+            "Check Armstrong number",
+            "Check perfect number",
+            "Generate multiplication table",
+            "Calculate power of a number",
+            "Count digits in a number",
+            "Find second-largest array element",
+            "Remove duplicate array elements",
+            "Merge two arrays",
+            "Find frequency of array elements",
+            "Find common elements in two arrays",
+            "Reverse a string",
+            "Check string palindrome",
+            "Count vowels and consonants",
+            "Count words in a string",
+            "Find character frequency",
+            "Demonstrate regular expressions",
+            "Validate email using regular expression",
+
+            "Add new elements dynamically",
+            "Remove HTML elements dynamically",
+            "Change CSS styles using JavaScript",
+            "Change multiple HTML elements",
+            "Demonstrate getElementById and getElementsByClassName",
+            "Demonstrate querySelector and querySelectorAll",
+            "Create and remove CSS classes dynamically",
+            "Create a dynamic table",
+            "Add and delete table rows",
+            "Search and filter table records",
+            "Create live character counter",
+            "Create password show/hide feature",
+            "Create dynamic dropdown",
+            "Create Country-State-City dependent dropdown",
+            "Create image slideshow/carousel",
+
+            "Demonstrate mouse events",
+            "Demonstrate keyboard events",
+            "Demonstrate form events",
+            "Demonstrate double-click event",
+            "Demonstrate event bubbling and capturing",
+            "Demonstrate event delegation",
+            "Create keyboard-controlled webpage/game",
+            "Create drag-and-drop application",
+
+            "Student registration form validation",
+            "Login form validation",
+            "Password strength checker",
+            "Signup form with password confirmation",
+            "Feedback form validation",
+            "College admission form validation",
+            "Display validation errors dynamically",
+
+            "Demonstrate Window object",
+            "Demonstrate Navigator object",
+            "Demonstrate Location object",
+            "Demonstrate History object",
+            "Demonstrate localStorage",
+            "Demonstrate sessionStorage",
+            "Create shopping cart using localStorage",
+            "Create light/dark theme using localStorage",
+
+            "Create digital calculator",
+            "Create digital clock",
+            "Create stopwatch",
+            "Create countdown timer",
+            "Create to-do list application",
+            "Create weather application",
+            "Create quiz application",
+            "Create number guessing game",
+            "Create tic-tac-toe game",
+            "Create expense tracker",
+            "Create student marks/grade calculator",
+            "Create shopping cart",
+            "Create notes application",
+            "Create random password generator",
+            "Create BMI calculator",
+            "Create currency converter",
+            "Create interactive portfolio website",
+
+            "Change text content",
+            "Change HTML content using innerHTML",
+            "Change element style dynamically",
+            "Change background color on button click",
+            "Create new HTML element dynamically",
+            "Remove an HTML element",
+            "Replace an HTML element",
+            "Add and remove CSS classes",
+            "Toggle a CSS class",
+            "Change HTML attributes dynamically",
+            "Create dynamic unordered list",
+            "Create dynamic ordered list",
+            "Create dynamic student table",
+            "Add table rows dynamically",
+            "Delete selected table row",
+            "Edit table data",
+            "Create searchable table",
+            "Sort table records",
+            "Create dynamic dropdown menu",
+            "Add select options dynamically",
+            "Create dependent Country-State-City dropdown",
+            "Create dynamic image gallery",
+            "Create image slideshow using DOM",
+            "Show/hide password",
+            "Show/hide content",
+            "Create tabs interface",
+            "Create accordion",
+            "Create modal popup",
+            "Create tooltip",
+            "Create live character counter",
+            "Create live word counter",
+            "Display current date and time",
+            "Create to-do list using DOM",
+            "Add, edit and delete to-do items",
+            "Demonstrate createElement, appendChild, remove and replaceChild",
+
+            "Demonstrate onclick event",
+            "Demonstrate ondblclick event",
+            "Demonstrate mouseover and mouseout",
+            "Demonstrate mousedown and mouseup",
+            "Demonstrate mousemove event",
+            "Demonstrate keydown event",
+            "Demonstrate keyup event",
+            "Display pressed keyboard key",
+            "Count keyboard key presses",
+            "Demonstrate focus and blur",
+            "Demonstrate change event",
+            "Demonstrate input event",
+            "Demonstrate submit event",
+            "Demonstrate reset event",
+            "Change background color on click",
+            "Change font size dynamically",
+            "Create multiple buttons with event handlers",
+            "Demonstrate addEventListener",
+            "Add multiple event listeners",
+            "Remove event listener",
+            "Demonstrate event bubbling",
+            "Demonstrate event capturing",
+            "Demonstrate event delegation",
+            "Create drag-and-drop application",
+            "Create mouse coordinate tracker",
+            "Create keyboard-controlled object",
+            "Create click counter",
+            "Create double-click counter",
+            "Create reaction-time game",
+            "Create keyboard typing test",
+
+            "Validate student registration form",
+            "Validate login form",
+            "Validate name using alphabets",
+            "Validate age field",
+            "Validate mobile phone number",
+            "Validate email address",
+            "Validate password minimum length",
+            "Create strong password validator",
+            "Validate password confirmation",
+            "Validate date of birth",
+            "Validate gender selection",
+            "Validate radio buttons",
+            "Validate checkbox selection",
+            "Validate dropdown selection",
+            "Validate textarea",
+            "Required-field validation",
+            "Display individual field errors",
+            "Display success message",
+            "Prevent invalid form submission",
+            "Validate form using regular expressions",
+            "Validate email using regular expression",
+            "Validate phone using regular expression",
+            "Validate password using regular expression",
+            "Create real-time form validation",
+            "Validate using input/change/focus/blur events",
+            "Create password strength meter",
+            "Create show/hide password option",
+            "Registration form with password confirmation",
+            "College admission form validation",
+            "Job application form validation",
+            "Feedback form validation",
+            "Contact form validation",
+            "Create multi-step registration form",
+            "Preview entered information",
+            "Calculate age from date of birth",
+            "Calculate marks total, average and grade",
+            "Calculate employee salary details",
+            "Calculate shopping order total",
+            "Create dynamic form fields",
+            "Validate form without page reload",
+
+            "Demonstrate Window object",
+            "Demonstrate alert, confirm and prompt",
+            "Demonstrate setTimeout",
+            "Demonstrate setInterval",
+            "Create digital clock using setInterval",
+            "Create countdown timer",
+            "Create stopwatch",
+            "Demonstrate Location object",
+            "Redirect to another webpage",
+            "Display current webpage URL",
+            "Demonstrate History object",
+            "Create Back, Forward and Reload buttons",
+            "Demonstrate Navigator object",
+            "Display browser information",
+            "Display screen width and height",
+            "Detect online/offline status",
+            "Display browser language",
+            "Demonstrate browser geolocation",
+            "Display current geographical coordinates",
+            "Update webpage on online/offline status",
+
+            "Store username using localStorage",
+            "Retrieve localStorage data",
+            "Update localStorage data",
+            "Delete localStorage item",
+            "Clear all localStorage data",
+            "Store multiple values",
+            "Store array using JSON",
+            "Store JavaScript object",
+            "Create student record system",
+            "Create to-do list using localStorage",
+            "Create notes application using localStorage",
+            "Create shopping cart using localStorage",
+            "Create login preference system",
+            "Create dark/light theme switcher",
+            "Save preferred font size",
+            "Create recently viewed items",
+            "Create visitor counter",
+            "Compare localStorage and sessionStorage",
+            "Store temporary form data using sessionStorage",
+            "Create multi-page form using sessionStorage",
+            "Automatically save form data",
+            "Restore form data after refresh",
+            "Create persistent shopping cart",
+            "Create student marks database",
+            "Create localStorage CRUD application"
+        ];
+
+        const sections = [
+            {
+                name: "Basic JavaScript",
+                start: 1,
+                end: 69,
+                className: "basic"
+            },
+            {
+                name: "DOM Manipulation",
+                start: 70,
+                end: 86,
+                className: "dom"
+            },
+            {
+                name: "Events",
+                start: 87,
+                end: 96,
+                className: "events"
+            },
+            {
+                name: "Forms & Validation",
+                start: 97,
+                end: 105,
+                className: "forms"
+            },
+            {
+                name: "Browser & Storage",
+                start: 106,
+                end: 115,
+                className: "browser"
+            },
+            {
+                name: "Mini Projects",
+                start: 116,
+                end: 133,
+                className: "basic"
+            },
+            {
+                name: "DOM Manipulation - Advanced",
+                start: 134,
+                end: 169,
+                className: "dom"
+            },
+            {
+                name: "JavaScript Events - Advanced",
+                start: 170,
+                end: 199,
+                className: "events"
+            },
+            {
+                name: "Forms & Validation - Advanced",
+                start: 200,
+                end: 239,
+                className: "forms"
+            },
+            {
+                name: "Browser Objects & Features",
+                start: 240,
+                end: 259,
+                className: "browser"
+            },
+            {
+                name: "Web Storage",
+                start: 260,
+                end: 272,
+                className: "storage"
+            }
+        ];
+
+        /*
+         * Generate exactly js1.html to js272.html.
+         */
+
+        function getSection(number) {
+
+            for (let section of sections) {
+
+                if (
+                    number >= section.start &&
+                    number <= section.end
+                ) {
+                    return section;
+                }
+            }
+
+            return {
+                name: "JavaScript Program",
+                className: "basic"
+            };
+        }
+
+
+        function createPrograms() {
+
+            const container =
+                document.getElementById(
+                    "programContainer"
+                );
+
+            container.innerHTML = "";
+
+            for (
+                let number = 1;
+                number <= 272;
+                number++
+            ) {
+
+                const section =
+                    getSection(number);
+
+                const title =
+                    programs[number - 1] ||
+                    "JavaScript Practical Program " +
+                    number;
+
+                if (
+                    number === section.start
+                ) {
+
+                    const sectionDiv =
+                        document.createElement("div");
+
+                    sectionDiv.className =
+                        "section";
+
+                    sectionDiv.dataset.section =
+                        section.className;
+
+                    sectionDiv.innerHTML =
+                        "<h2>" +
+                        section.name +
+                        "</h2>" +
+                        "<div class='program-list'></div>";
+
+                    container.appendChild(
+                        sectionDiv
+                    );
+                }
+
+                const allSections =
+                    container.querySelectorAll(
+                        ".section"
+                    );
+
+                const currentSection =
+                    allSections[
+                        allSections.length - 1
+                    ];
+
+                const list =
+                    currentSection.querySelector(
+                        ".program-list"
+                    );
+
+                const card =
+                    document.createElement("div");
+
+                card.className =
+                    "program";
+
+                card.dataset.number =
+                    number;
+
+                card.dataset.title =
+                    title.toLowerCase();
+
+                card.innerHTML = `
+                    <div class="program-number">
+                        Program ${number}
+                    </div>
+
+                    <div class="program-title">
+                        ${title}
+                    </div>
+
+                    <a
+                        class="open-btn"
+                        href="js${number}.html"
+                        target="_blank"
+                    >
+                        Open Program
+                    </a>
+
+                    <div
+                        class="not-found"
+                        id="error-${number}"
+                    >
+                        File: js${number}.html
+                    </div>
+                `;
+
+                list.appendChild(card);
+            }
+        }
+
+
+        function showAll() {
+
+            const sections =
+                document.querySelectorAll(
+                    ".section"
+                );
+
+            sections.forEach(section => {
+                section.style.display = "block";
+            });
+
+            const programs =
+                document.querySelectorAll(
+                    ".program"
+                );
+
+            programs.forEach(program => {
+                program.style.display = "block";
+            });
+
+            document.getElementById(
+                "search"
+            ).value = "";
+        }
+
+
+        function showSection(sectionName) {
+
+            const sections =
+                document.querySelectorAll(
+                    ".section"
+                );
+
+            sections.forEach(section => {
+
+                if (
+                    section.dataset.section ===
+                    sectionName
+                ) {
+                    section.style.display =
+                        "block";
+                } else {
+                    section.style.display =
+                        "none";
+                }
+            });
+        }
+
+
+        function searchPrograms() {
+
+            const search =
+                document.getElementById(
+                    "search"
+                ).value.toLowerCase();
+
+            const sections =
+                document.querySelectorAll(
+                    ".section"
+                );
+
+            sections.forEach(section => {
+
+                let visibleCount = 0;
+
+                const programs =
+                    section.querySelectorAll(
+                        ".program"
+                    );
+
+                programs.forEach(program => {
+
+                    const number =
+                        program.dataset.number;
+
+                    const title =
+                        program.dataset.title;
+
+                    const match =
+                        number.includes(search) ||
+                        title.includes(search);
+
+                    if (match) {
+
+                        program.style.display =
+                            "block";
+
+                        visibleCount++;
+
+                    } else {
+
+                        program.style.display =
+                            "none";
+                    }
+                });
+
+                section.style.display =
+                    visibleCount > 0
+                        ? "block"
+                        : "none";
+            });
+        }
+
+
+        /*
+         * Create the complete dashboard
+         * when index.html loads.
+         */
+
+        createPrograms();
+
+    </script>
+
+</body>
+
+</html>

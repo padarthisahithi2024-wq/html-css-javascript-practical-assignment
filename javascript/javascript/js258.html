@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12. Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="brand">WEB STORAGE LAB</div>
+    <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Programs</a>
+    </div>
+</div>
+
+<section class="hero">
+    <h1>12. Shopping Cart Using localStorage</h1>
+    <p>Web Storage • Working JavaScript Demonstration</p>
+</section>
+
+<main class="container">
+<section class="card">
+
+<h2>Program Description</h2>
+<p>Adds products to a shopping cart and stores the cart.</p>
+
+<div class="demo">
+    <button onclick="addProduct('Laptop')">Add Laptop</button>
+    <button onclick="addProduct('Headphones')">Add Headphones</button>
+    <button onclick="addProduct('Mouse')">Add Mouse</button>
+    <button onclick="showCart()">View Cart</button>
+    <div id="out" class="output"></div>
+</div>
+
+<div class="page-nav">
+    <a href="11.html">‹ Prev</a>
+    <a class="middle" href="index.html">☰ All Programs</a>
+    <a href="13.html">Next ›</a>
+</div>
+
+</section>
+</main>
+
+<footer>Web Storage Project • Program 12 of 25</footer>
+
+<script>
+function addProduct(product) {
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push(product);
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    document.getElementById("out").textContent =
+        product + " added to cart.";
+}
+
+function showCart() {
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+    document.getElementById("out").innerHTML =
+        cart.length
+        ? cart.join("<br>")
+        : "Cart is empty.";
+}
+</script>
+
+</body>
+</html>

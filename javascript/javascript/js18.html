@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arrays and Methods</title>
+</head>
+<body>
+    <h1>Arrays and array methods</h1>
+    <p id="output"></p>
+    <script>
+        const products = ["Notebook", "Pen", "Backpack"];
+        const upperCaseProducts = products.map((product) => product.toUpperCase());
+        const longNames = products.filter((product) => product.length > 4);
+        products.push("Calculator");
+        document.getElementById("output").textContent = `Mapped: ${upperCaseProducts.join(", ")}. Filtered: ${longNames.join(", ")}. Count after push: ${products.length}.`;
+    </script>
+</body>
+</html>

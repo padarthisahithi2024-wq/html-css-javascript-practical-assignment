@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyup Event</title>
+</head>
+<body>
+
+    <h2>Keyup Event</h2>
+
+    <input
+        type="text"
+        onkeyup="keyUp()"
+        placeholder="Release a key">
+
+    <p id="output"></p>
+
+    <script>
+        function keyUp() {
+            document.getElementById("output").textContent =
+                "The key was released.";
+        }
+    </script>
+
+</body>
+</html>

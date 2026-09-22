@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reverse a Number</title>
+</head>
+<body>
+    <h1>Reverse a number</h1>
+    <p id="output"></p>
+    <script>
+        const number = 48320;
+        const reversed = Number(String(number).split("").reverse().join(""));
+        document.getElementById("output").textContent = `${number} reversed is ${reversed}.`;
+    </script>
+</body>
+</html>

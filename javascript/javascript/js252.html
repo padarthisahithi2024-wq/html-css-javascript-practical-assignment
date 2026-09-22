@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6. Store Multiple Values</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="brand">WEB STORAGE LAB</div>
+    <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Programs</a>
+    </div>
+</div>
+
+<section class="hero">
+    <h1>6. Store Multiple Values Using localStorage</h1>
+    <p>Web Storage • Working JavaScript Demonstration</p>
+</section>
+
+<main class="container">
+<section class="card">
+
+<h2>Program Description</h2>
+<p>Stores name, email and age using separate localStorage items.</p>
+
+<div class="demo">
+    <input id="name" placeholder="Enter name">
+    <input id="email" placeholder="Enter email">
+    <input id="age" placeholder="Enter age" type="number">
+    <button onclick="save()">Save Values</button>
+    <button onclick="show()">Display Values</button>
+    <div id="out" class="output"></div>
+</div>
+
+<div class="page-nav">
+    <a href="05.html">‹ Prev</a>
+    <a class="middle" href="index.html">☰ All Programs</a>
+    <a href="07.html">Next ›</a>
+</div>
+
+</section>
+</main>
+
+<footer>Web Storage Project • Program 6 of 25</footer>
+
+<script>
+function save() {
+    localStorage.setItem("name", document.getElementById("name").value);
+    localStorage.setItem("email", document.getElementById("email").value);
+    localStorage.setItem("age", document.getElementById("age").value);
+
+    document.getElementById("out").textContent =
+        "Multiple values saved successfully.";
+}
+
+function show() {
+    document.getElementById("out").textContent =
+        "Name: " + localStorage.getItem("name") +
+        " | Email: " + localStorage.getItem("email") +
+        " | Age: " + localStorage.getItem("age");
+}
+</script>
+
+</body>
+</html>

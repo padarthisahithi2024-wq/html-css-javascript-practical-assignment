@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Application</title>
+</head>
+<body>
+
+    <h2>Job Application Form</h2>
+
+    <form onsubmit="return applyJob()">
+
+        Name:
+        <input type="text" id="name">
+        <br><br>
+
+        Email:
+        <input type="text" id="email">
+        <br><br>
+
+        Phone:
+        <input type="text" id="phone">
+        <br><br>
+
+        Position:
+        <select id="position">
+            <option value="">Select Position</option>
+            <option>Web Developer</option>
+            <option>Software Developer</option>
+            <option>Designer</option>
+        </select>
+
+        <br><br>
+
+        Skills:
+        <textarea id="skills"></textarea>
+
+        <br><br>
+
+        <button type="submit">Apply</button>
+
+    </form>
+
+    <script>
+        function applyJob() {
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let position = document.getElementById("position").value;
+            let skills = document.getElementById("skills").value;
+
+            if (name == "" || email == "" ||
+                phone == "" || position == "" || skills == "") {
+
+                alert("Please fill all fields.");
+                return false;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert("Invalid email.");
+                return false;
+            }
+
+            if (!/^[0-9]{10}$/.test(phone)) {
+                alert("Invalid phone number.");
+                return false;
+            }
+
+            alert("Job application submitted.");
+            return false;
+        }
+    </script>
+
+</body>
+</html>

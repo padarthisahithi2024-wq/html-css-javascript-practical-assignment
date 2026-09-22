@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="js-lab.css">
+	<title>Remove Elements</title>
+</head>
+<body>
+	<main>
+		<h1>Remove elements dynamically</h1>
+		<p id="message">Remove this paragraph.</p>
+		<button id="remove">Remove</button>
+		<script>
+			document.getElementById("remove").addEventListener("click", () => {
+				document.getElementById("message").remove();
+			});
+		</script>
+	</main>
+</body>
+</html>

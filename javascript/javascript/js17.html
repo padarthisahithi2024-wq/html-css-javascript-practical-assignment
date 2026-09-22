@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Strings and Methods</title>
+</head>
+<body>
+    <h1>Strings and string methods</h1>
+    <p id="output"></p>
+    <script>
+        const text = "  JavaScript makes the web interactive.  ";
+        const cleanedText = text.trim();
+        const result = `${cleanedText.toUpperCase()} Length: ${cleanedText.length}. Includes "web": ${cleanedText.includes("web")}.`;
+        document.getElementById("output").textContent = result;
+    </script>
+</body>
+</html>

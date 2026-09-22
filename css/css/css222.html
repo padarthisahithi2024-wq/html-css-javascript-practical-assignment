@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="responsive-components.css">
+<title>Mobile-first SaaS Layout</title>
+<style>.mobile-layout{display:grid;gap:16px}.mobile-layout aside{order:2}@media(min-width:720px){.mobile-layout{grid-template-columns:220px 1fr}.mobile-layout aside{order:0}}</style>
+</head>
+<body>
+<main class="page"><div class="mobile-layout"><aside class="card"><h2>Workspace</h2><p>Home</p><p>Projects</p><p>Team</p></aside><section class="card"><h1>Mobile-first layout</h1><p class="muted">The content starts as a single column and expands on larger screens.</p></section></div></main>
+</body>
+</html>

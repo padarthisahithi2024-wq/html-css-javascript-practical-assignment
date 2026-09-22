@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Coordinate Tracker</title>
+</head>
+<body>
+
+    <h2>Mouse Coordinate Tracker</h2>
+
+    <div
+        id="area"
+        style="width:500px; height:250px; background:lightgray;">
+    </div>
+
+    <p id="output">Move the mouse inside the box.</p>
+
+    <script>
+        document.getElementById("area").addEventListener(
+            "mousemove",
+            function(event) {
+
+                document.getElementById("output").textContent =
+                    "X: " + event.offsetX +
+                    " | Y: " + event.offsetY;
+            }
+        );
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Pressed Key</title>
+</head>
+<body>
+
+    <h2>Press Any Key</h2>
+
+    <input id="keyInput" placeholder="Press a key">
+
+    <p id="output"></p>
+
+    <script>
+        document.getElementById("keyInput").addEventListener(
+            "keydown",
+            function(event) {
+                document.getElementById("output").textContent =
+                    "You pressed: " + event.key;
+            }
+        );
+    </script>
+
+</body>
+</html>

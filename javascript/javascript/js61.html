@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="js-lab.css">
+	<title>Reverse a String</title>
+</head>
+<body>
+	<main>
+		<h1>Reverse a string</h1>
+		<p id="output"></p>
+		<script>
+			const text = "JavaScript";
+			const reversed = text.split("").reverse().join("");
+			document.getElementById("output").textContent = reversed;
+		</script>
+	</main>
+</body>
+</html>

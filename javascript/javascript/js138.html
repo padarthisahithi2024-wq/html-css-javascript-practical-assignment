@@ -1,0 +1,22 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <style>.active{color:#4353ff;font-weight:bold}</style>
+    <title>CSS Classes</title>
+</head>
+<body>
+    <main>
+        <p id="item">Class control</p>
+        <button id="add">Add class</button>
+        <button id="remove">Remove class</button>
+        <script>
+            add.onclick = () => item.classList.add("active");
+            remove.onclick = () => item.classList.remove("active");
+        </script>
+    </main>
+</body>
+</html>
+

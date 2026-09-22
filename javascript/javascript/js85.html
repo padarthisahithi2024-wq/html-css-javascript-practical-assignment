@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Form Events</title>
+</head>
+<body>
+    <main>
+        <h1>Form events</h1>
+        <form id="form">
+            <label>Name<input id="name" required></label>
+            <label>Course<select id="course"><option>HTML</option><option>CSS</option><option>JavaScript</option></select></label>
+            <button>Submit</button>
+        </form>
+        <p id="output"></p>
+        <script>
+            const form = document.getElementById("form");
+            const output = document.getElementById("output");
+            form.addEventListener("submit", (event) => { event.preventDefault(); output.textContent = "Submit event fired."; });
+            document.getElementById("course").addEventListener("change", (event) => { output.textContent = `Change event: ${event.target.value}`; });
+            document.getElementById("name").addEventListener("focus", () => { output.textContent = "Focus event fired."; });
+            document.getElementById("name").addEventListener("blur", () => { output.textContent = "Blur event fired."; });
+        </script>
+    </main>
+</body>
+</html>

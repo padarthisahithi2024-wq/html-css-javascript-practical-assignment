@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="js-lab.css">
+	<title>Character Frequency</title>
+</head>
+<body>
+	<main>
+		<h1>Character frequency</h1>
+		<ul id="output"></ul>
+		<script>
+			const text = "banana";
+			const counts = {};
+			for (const character of text) {
+				counts[character] = (counts[character] || 0) + 1;
+			}
+			document.getElementById("output").innerHTML = Object.entries(counts).map(([character, count]) => `<li>${character}: ${count}</li>`).join("");
+		</script>
+	</main>
+</body>
+</html>

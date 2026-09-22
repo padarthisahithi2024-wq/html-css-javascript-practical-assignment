@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Key Press Counter</title>
+</head>
+<body>
+
+    <h2>Keyboard Key Counter</h2>
+
+    <input id="input" placeholder="Start typing">
+
+    <p>Key Presses: <span id="count">0</span></p>
+
+    <script>
+        let count = 0;
+
+        document.getElementById("input").addEventListener(
+            "keydown",
+            function() {
+                count++;
+                document.getElementById("count").textContent = count;
+            }
+        );
+    </script>
+
+</body>
+</html>

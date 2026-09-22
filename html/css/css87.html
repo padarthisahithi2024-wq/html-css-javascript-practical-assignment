@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="saas-components.css">
+    <title>Multi-step Form</title>
+    <style>form{max-width:620px;margin:auto;display:grid;gap:14px}input{padding:11px;border:1px solid var(--line);border-radius:7px}.steps{display:flex;gap:8px}.steps span{flex:1;height:7px;background:var(--brand);border-radius:9px}.steps span:last-child{background:var(--line)}</style>
+</head>
+<body>
+    <main class="page"><form class="card"><div class="steps"><span></span><span></span><span></span></div><p class="muted">Step 2 of 3</p><h1>Tell us about your team</h1><label>Team name<input type="text"></label><label>Team size<input type="number" min="1"></label><div><button class="btn outline">Back</button> <button class="btn primary">Continue</button></div></form></main>
+</body>
+</html>

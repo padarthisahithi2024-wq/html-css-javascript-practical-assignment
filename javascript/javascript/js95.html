@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js-lab.css">
+<title>Feedback Validation</title>
+</head>
+<body>
+<main>
+<h1>Feedback form</h1>
+<form id="form">
+<label>Email<input type="email" required>
+</label>
+<label>Rating<select required>
+<option value="">Choose</option>
+<option>Excellent</option>
+<option>Good</option>
+</select>
+</label>
+<label>Message<textarea required>
+</textarea>
+</label>
+<button>Send feedback</button>
+</form>
+<p id="output">
+</p>
+<script>document.getElementById("form").addEventListener("submit",(event)=>{event.preventDefault();document.getElementById("output").textContent=event.currentTarget.checkValidity()?"Thank you for your feedback.":"Please complete the form.";});</script>
+</main>
+</body>
+</html>
+

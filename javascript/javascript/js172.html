@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Event Listeners</title>
+</head>
+<body>
+
+    <h2>Multiple Listeners</h2>
+
+    <button id="button">Click Me</button>
+
+    <p id="output"></p>
+
+    <script>
+        const button = document.getElementById("button");
+
+        button.addEventListener("click", function() {
+            document.getElementById("output").textContent =
+                "First event listener.";
+        });
+
+        button.addEventListener("click", function() {
+            document.getElementById("output").textContent +=
+                " Second event listener.";
+        });
+    </script>
+
+</body>
+</html>

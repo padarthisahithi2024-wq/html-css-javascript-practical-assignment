@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js-lab.css">
+<title>College Admission</title>
+</head>
+<body>
+<main>
+<h1>College admission</h1>
+<form id="form">
+<label>Name<input required>
+</label>
+<label>Email<input type="email" required>
+</label>
+<label>Marks<input id="marks" type="number" min="0" max="100" required>
+</label>
+<button>Apply</button>
+</form>
+<p id="output">
+</p>
+<script>document.getElementById("form").addEventListener("submit",(event)=>{event.preventDefault();const marks=Number(document.getElementById("marks").value);document.getElementById("output").textContent=marks>=50?"Application is eligible.":"Minimum marks requirement not met.";});</script>
+</main>
+</body>
+</html>
+

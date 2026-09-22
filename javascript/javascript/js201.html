@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success Message</title>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form onsubmit="return submitForm()">
+
+        Name:
+        <input type="text" id="name">
+
+        <br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <p id="success"></p>
+
+    <script>
+        function submitForm() {
+
+            let name = document.getElementById("name").value;
+
+            if (name == "") {
+                alert("Please enter your name.");
+                return false;
+            }
+
+            document.getElementById("success").innerHTML =
+                "Form submitted successfully!";
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Palindrome Number</title>
+</head>
+<body>
+    <h1>Palindrome check</h1>
+    <p id="output"></p>
+    <script>
+        const number = 1221;
+        const digits = String(number);
+        const reversed = digits.split("").reverse().join("");
+        document.getElementById("output").textContent = `${number} is ${digits === reversed ? "a palindrome" : "not a palindrome"}.`;
+    </script>
+</body>
+</html>

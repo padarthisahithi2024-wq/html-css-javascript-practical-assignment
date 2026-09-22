@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript Objects</title>
+</head>
+<body>
+    <h1>Objects in JavaScript</h1>
+    <p id="output"></p>
+    <script>
+        const student = {
+            name: "Alex Morgan",
+            course: "Computer Science",
+            year: 2,
+            introduce() {
+                return `${this.name} studies ${this.course}.`;
+            }
+        };
+
+        document.getElementById("output").textContent = `${student.introduce()} Year: ${student.year}.`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Events</title>
+</head>
+<body>
+
+    <h2>Form Events Validation</h2>
+
+    <input type="text" id="name" placeholder="Enter name">
+
+    <p id="message"></p>
+
+    <script>
+
+        let name = document.getElementById("name");
+        let message = document.getElementById("message");
+
+        name.addEventListener("input", function() {
+            message.innerHTML = "Typing...";
+        });
+
+        name.addEventListener("change", function() {
+            message.innerHTML = "Value changed.";
+        });
+
+        name.addEventListener("focus", function() {
+            message.innerHTML = "Input field selected.";
+        });
+
+        name.addEventListener("blur", function() {
+
+            if (name.value == "") {
+                message.innerHTML = "Name is required.";
+            }
+            else {
+                message.innerHTML = "Valid name.";
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

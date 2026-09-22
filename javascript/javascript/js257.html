@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11. Notes Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="brand">WEB STORAGE LAB</div>
+    <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Programs</a>
+    </div>
+</div>
+
+<section class="hero">
+    <h1>11. Notes Application Using localStorage</h1>
+    <p>Web Storage • Working JavaScript Demonstration</p>
+</section>
+
+<main class="container">
+<section class="card">
+
+<h2>Program Description</h2>
+<p>Saves notes in localStorage.</p>
+
+<div class="demo">
+    <textarea id="note" placeholder="Write your note"></textarea>
+    <button onclick="saveNote()">Save Note</button>
+    <button onclick="showNote()">Show Note</button>
+    <div id="out" class="output"></div>
+</div>
+
+<div class="page-nav">
+    <a href="10.html">‹ Prev</a>
+    <a class="middle" href="index.html">☰ All Programs</a>
+    <a href="12.html">Next ›</a>
+</div>
+
+</section>
+</main>
+
+<footer>Web Storage Project • Program 11 of 25</footer>
+
+<script>
+function saveNote() {
+    let note = document.getElementById("note").value;
+
+    localStorage.setItem("note", note);
+
+    document.getElementById("out").textContent =
+        "Note saved successfully.";
+}
+
+function showNote() {
+    let note = localStorage.getItem("note");
+
+    document.getElementById("out").textContent =
+        note || "No note found.";
+}
+</script>
+
+</body>
+</html>

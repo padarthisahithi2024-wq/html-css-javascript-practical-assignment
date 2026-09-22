@@ -1,0 +1,21 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js-lab.css">
+<title>Local Storage</title>
+</head>
+<body>
+<main>
+<h1>Local storage</h1>
+<input id="value" placeholder="Save a value">
+<button id="save">Save</button>
+<button id="load">Load</button>
+<p id="output">
+</p>
+<script>save.onclick=()=>{localStorage.setItem("value",value.value);output.textContent="Saved.";};load.onclick=()=>{output.textContent=localStorage.getItem("value")||"Nothing saved.";};</script>
+</main>
+</body>
+</html>
+

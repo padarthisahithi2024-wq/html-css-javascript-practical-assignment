@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Mouse Events</title>
+</head>
+<body>
+    <main>
+        <h1>Mouse events</h1>
+        <button id="mouseButton">Move, enter, leave, or click</button>
+        <p id="output"></p>
+        <script>
+            const button = document.getElementById("mouseButton");
+            const output = document.getElementById("output");
+            ["mouseenter", "mouseleave", "mousemove", "click"].forEach((eventName) => {
+                button.addEventListener(eventName, () => {
+                    output.textContent = `Mouse event: ${eventName}`;
+                });
+            });
+        </script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form onsubmit="return register()">
+
+        Username:
+        <input type="text" id="username">
+
+        <br><br>
+
+        Password:
+        <input type="password" id="password">
+
+        <br><br>
+
+        Confirm Password:
+        <input type="password" id="confirmPassword">
+
+        <br><br>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+    <script>
+        function register() {
+
+            let username =
+                document.getElementById("username").value;
+
+            let password =
+                document.getElementById("password").value;
+
+            let confirmPassword =
+                document.getElementById("confirmPassword").value;
+
+            if (username == "") {
+                alert("Enter username.");
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert("Password must have 6 characters.");
+                return false;
+            }
+
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            alert("Registration successful.");
+            return false;
+        }
+    </script>
+
+</body>
+</html>

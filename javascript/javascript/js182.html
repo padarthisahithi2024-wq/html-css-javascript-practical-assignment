@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reaction Time Game</title>
+</head>
+<body>
+
+    <h2>Reaction Time Game</h2>
+
+    <p id="message">Wait for the button to become green.</p>
+
+    <button id="button" disabled>
+        Wait...
+    </button>
+
+    <script>
+        const button = document.getElementById("button");
+        const message = document.getElementById("message");
+
+        let startTime;
+
+        setTimeout(function() {
+
+            button.disabled = false;
+            button.textContent = "CLICK!";
+            button.style.backgroundColor = "lightgreen";
+
+            startTime = Date.now();
+
+        }, 2000);
+
+        button.addEventListener("click", function() {
+
+            const reactionTime = Date.now() - startTime;
+
+            message.textContent =
+                "Your reaction time was " +
+                reactionTime +
+                " milliseconds.";
+
+            button.disabled = true;
+        });
+    </script>
+
+</body>
+</html>

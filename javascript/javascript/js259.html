@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13. Login Preference System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="brand">WEB STORAGE LAB</div>
+    <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Programs</a>
+    </div>
+</div>
+
+<section class="hero">
+    <h1>13. Login Preference System</h1>
+    <p>Web Storage • Working JavaScript Demonstration</p>
+</section>
+
+<main class="container">
+<section class="card">
+
+<h2>Program Description</h2>
+<p>Stores the user's login preference using localStorage.</p>
+
+<div class="demo">
+    <input id="username" placeholder="Username">
+    <label>
+        <input type="checkbox" id="remember">
+        Remember Me
+    </label>
+    <button onclick="savePreference()">Save Preference</button>
+    <button onclick="loadPreference()">Load Preference</button>
+    <div id="out" class="output"></div>
+</div>
+
+<div class="page-nav">
+    <a href="12.html">‹ Prev</a>
+    <a class="middle" href="index.html">☰ All Programs</a>
+    <a href="14.html">Next ›</a>
+</div>
+
+</section>
+</main>
+
+<footer>Web Storage Project • Program 13 of 25</footer>
+
+<script>
+function savePreference() {
+    localStorage.setItem(
+        "username",
+        document.getElementById("username").value
+    );
+
+    localStorage.setItem(
+        "remember",
+        document.getElementById("remember").checked
+    );
+
+    document.getElementById("out").textContent =
+        "Login preference saved.";
+}
+
+function loadPreference() {
+    document.getElementById("username").value =
+        localStorage.getItem("username") || "";
+
+    document.getElementById("remember").checked =
+        localStorage.getItem("remember") === "true";
+
+    document.getElementById("out").textContent =
+        "Login preference loaded.";
+}
+</script>
+
+</body>
+</html>

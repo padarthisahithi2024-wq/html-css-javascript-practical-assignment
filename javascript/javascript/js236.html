@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser Operations</title>
+</head>
+<body>
+
+<h2>Browser Operations</h2>
+
+<button onclick="goBack()">Back</button>
+
+<button onclick="goForward()">Forward</button>
+
+<button onclick="reloadPage()">Reload</button>
+
+<script>
+function goBack() {
+    history.back();
+}
+
+function goForward() {
+    history.forward();
+}
+
+function reloadPage() {
+    location.reload();
+}
+</script>
+
+</body>
+</html>

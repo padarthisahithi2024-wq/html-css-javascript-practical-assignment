@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Show and Hide Content</title>
+</head>
+<body>
+    <main>
+        <h1>Show and hide content</h1>
+        <button id="toggle">Hide content</button>
+        <p id="content">This content can be hidden and shown.</p>
+        <script>
+            document.getElementById("toggle").addEventListener("click", () => {
+                const content = document.getElementById("content");
+                content.hidden = !content.hidden;
+                document.getElementById("toggle").textContent = content.hidden ? "Show content" : "Hide content";
+            });
+        </script>
+    </main>
+</body>
+</html>

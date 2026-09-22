@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25. CRUD Application Using localStorage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="brand">WEB STORAGE LAB</div>
+    <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Programs</a>
+    </div>
+</div>
+
+<section class="hero">
+    <h1>25. CRUD Application Using localStorage</h1>
+    <p>Web Storage • Create • Read • Update • Delete</p>
+</section>
+
+<main class="container">
+<section class="card">
+
+<h2>Program Description</h2>
+<p>Creates, reads, updates and deletes student records using localStorage.</p>
+
+<div class="demo">
+
+    <input id="name" placeholder="Student name">
+    <input id="course" placeholder="Course">
+
+    <button onclick="createRecord()">Create</button>
+    <button onclick="readRecords()">Read</button>
+    <button onclick="updateRecord()">Update First Record</button>
+    <button onclick="deleteRecord()">Delete First Record</button>
+
+    <div id="out" class="output"></div>
+
+</div>
+
+<div class="page-nav">
+    <a href="24.html">‹ Prev</a>
+    <a class="middle" href="index.html">☰ All Programs</a>
+    <a class="disabled" href="#">Next ›</a>
+</div>
+
+</section>
+</main>
+
+<footer>Web Storage Project • Program 25 of 25</footer>
+
+<script>
+function getRecords() {
+    return JSON.parse(
+        localStorage.getItem("crudRecords")
+    ) || [];
+}
+
+function createRecord() {
+
+    let records = getRecords();
+
+    let record = {
+        name: document.getElementById("name").value,
+        course: document.getElementById("course").value
+    };
+
+    records.push(record);
+
+    localStorage.setItem(
+        "crudRecords",
+        JSON.stringify(records)
+    );
+
+    document.getElementById("out").textContent =
+        "Record created successfully.";
+
+    readRecords();
+}
+
+function readRecords() {
+
+    let records = getRecords();
+
+    if (records.length === 0) {
+        document.getElementById("out").textContent =
+            "No records found.";
+        return;
+    }
+
+    document.getElementById("out").innerHTML =
+        records.map(function(record, index) {
+
+            return (index + 1) +
+                ". " + record.name +
+                " - " + record.course;
+
+        }).join("<br>");
+}
+
+function updateRecord() {
+
+    let records = getRecords();
+
+    if (records.length === 0) {
+        document.getElementById("out").textContent =
+            "No record to update.";
+        return;
+    }
+
+    records[0].name =
+        document.getElementById("name").value;
+
+    records[0].course =
+        document.getElementById("course").value;
+
+    localStorage.setItem(
+        "crudRecords",
+        JSON.stringify(records)
+    );
+
+    document.getElementById("out").textContent =
+        "First record updated successfully.";
+
+    readRecords();
+}
+
+function deleteRecord() {
+
+    let records = getRecords();
+
+    if (records.length === 0) {
+        document.getElementById("out").textContent =
+            "No record to delete.";
+        return;
+    }
+
+    records.shift();
+
+    localStorage.setItem(
+        "crudRecords",
+        JSON.stringify(records)
+    );
+
+    document.getElementById("out").textContent =
+        "First record deleted successfully.";
+
+    readRecords();
+}
+
+readRecords();
+</script>
+
+</body>
+</html>

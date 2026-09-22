@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keydown Event</title>
+</head>
+<body>
+
+    <h2>Keydown Event</h2>
+
+    <input
+        type="text"
+        onkeydown="keyDown()"
+        placeholder="Press any key">
+
+    <p id="output"></p>
+
+    <script>
+        function keyDown() {
+            document.getElementById("output").textContent =
+                "A key was pressed down.";
+        }
+    </script>
+
+</body>
+</html>

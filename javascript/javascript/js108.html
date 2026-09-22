@@ -1,0 +1,19 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="js-lab.css">
+<title>Stopwatch</title>
+</head>
+<body>
+<main>
+<h1>Stopwatch</h1>
+<p id="time">0</p>
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+<script>let seconds=0;let timer;start.onclick=()=>timer=setInterval(()=>time.textContent=++seconds,1000);stop.onclick=()=>clearInterval(timer);</script>
+</main>
+</body>
+</html>
+

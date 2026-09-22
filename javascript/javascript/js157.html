@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Down and Up</title>
+</head>
+<body>
+
+    <h2>Mouse Down and Mouse Up</h2>
+
+    <button
+        onmousedown="mouseDown()"
+        onmouseup="mouseUp()">
+        Press Me
+    </button>
+
+    <p id="output"></p>
+
+    <script>
+        function mouseDown() {
+            document.getElementById("output").textContent =
+                "Mouse button is pressed.";
+        }
+
+        function mouseUp() {
+            document.getElementById("output").textContent =
+                "Mouse button is released.";
+        }
+    </script>
+
+</body>
+</html>

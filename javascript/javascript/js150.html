@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Current Date and Time</title>
+</head>
+<body>
+    <main>
+        <h1>Current date and time</h1>
+        <p id="now"></p>
+        <script>
+            const update = () => {
+                document.getElementById("now").textContent = new Date().toLocaleString();
+            };
+            update();
+            setInterval(update, 1000);
+        </script>
+    </main>
+</body>
+</html>

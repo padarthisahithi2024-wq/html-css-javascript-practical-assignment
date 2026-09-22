@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Largest and Smallest Array Elements</title>
+</head>
+<body>
+    <h1>Largest and smallest array elements</h1>
+    <p id="output"></p>
+    <script>
+        const values = [42, 7, 19, 84, 13];
+        const largest = Math.max(...values);
+        const smallest = Math.min(...values);
+        document.getElementById("output").textContent = `Array: ${values.join(", ")}. Largest: ${largest}. Smallest: ${smallest}.`;
+    </script>
+</body>
+</html>

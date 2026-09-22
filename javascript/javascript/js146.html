@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Modal Popup</title>
+    <style>.modal{padding:1.5rem;border:1px solid #cbd3df;background:white}</style>
+</head>
+<body>
+    <main>
+        <h1>Modal popup</h1>
+        <button id="open">Open modal</button>
+        <section class="modal" id="modal" hidden>
+            <h2>Modal dialog</h2>
+            <p>This dialog was opened with JavaScript.</p>
+            <button id="close">Close</button>
+        </section>
+        <script>
+            open.onclick = () => { modal.hidden = false; };
+            close.onclick = () => { modal.hidden = true; };
+        </script>
+    </main>
+</body>
+</html>

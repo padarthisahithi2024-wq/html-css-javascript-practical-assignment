@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>DOM Image Slideshow</title>
+</head>
+<body>
+    <main>
+        <h1>Image slideshow</h1>
+        <img id="slide" width="600" alt="Slideshow image" src="https://images.unsplash.com/photo-150752542640?auto=format&fit=crop&w=600&q=80">
+        <button id="next">Next image</button>
+        <script>
+            const images = [
+                "https://images.unsplash.com/photo-150752542640?auto=format&fit=crop&w=600&q=80",
+                "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=600&q=80"
+            ];
+            let current = 0;
+            document.getElementById("next").addEventListener("click", () => {
+                current = (current + 1) % images.length;
+                document.getElementById("slide").src = images[current];
+            });
+        </script>
+    </main>
+</body>
+</html>

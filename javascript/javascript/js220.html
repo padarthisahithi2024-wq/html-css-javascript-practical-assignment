@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Salary</title>
+</head>
+<body>
+
+    <h2>Employee Salary Calculator</h2>
+
+    Basic Salary:
+    <input type="number" id="basic">
+
+    <br><br>
+
+    HRA (%):
+    <input type="number" id="hra" value="20">
+
+    <br><br>
+
+    DA (%):
+    <input type="number" id="da" value="10">
+
+    <br><br>
+
+    <button onclick="calculateSalary()">Calculate</button>
+
+    <p id="result"></p>
+
+    <script>
+        function calculateSalary() {
+
+            let basic = Number(
+                document.getElementById("basic").value
+            );
+
+            let hraPercent = Number(
+                document.getElementById("hra").value
+            );
+
+            let daPercent = Number(
+                document.getElementById("da").value
+            );
+
+            if (basic <= 0) {
+                alert("Enter a valid basic salary.");
+                return;
+            }
+
+            let hra = basic * hraPercent / 100;
+            let da = basic * daPercent / 100;
+            let gross = basic + hra + da;
+
+            document.getElementById("result").innerHTML =
+                "Basic Salary: " + basic + "<br>" +
+                "HRA: " + hra + "<br>" +
+                "DA: " + da + "<br>" +
+                "Gross Salary: " + gross;
+        }
+    </script>
+
+</body>
+</html>

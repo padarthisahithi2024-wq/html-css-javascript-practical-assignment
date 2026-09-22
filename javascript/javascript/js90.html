@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Drag and Drop</title>
+    <style>#drag{display:inline-block;padding:1rem;background:#4353ff;color:white}.dropzone{min-height:120px;margin-top:1rem;padding:2rem;border:2px dashed #4353ff}</style>
+</head>
+<body>
+    <main>
+        <h1>Drag-and-drop application</h1>
+        <div id="drag" draggable="true">Drag me</div>
+        <div class="dropzone" id="dropzone">Drop here</div>
+        <p id="output"></p>
+        <script>
+            const drag = document.getElementById("drag");
+            const dropzone = document.getElementById("dropzone");
+            drag.addEventListener("dragstart", (event) => { event.dataTransfer.setData("text/plain", "dragged"); });
+            dropzone.addEventListener("dragover", (event) => { event.preventDefault(); });
+            dropzone.addEventListener("drop", (event) => { event.preventDefault(); dropzone.appendChild(drag); document.getElementById("output").textContent = "Item dropped successfully."; });
+        </script>
+    </main>
+</body>
+</html>

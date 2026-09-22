@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Dropdown</title>
+</head>
+<body>
+
+<h2>Select a Subject</h2>
+
+<select id="subject"></select>
+
+<script>
+let subjects = [
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "C Programming",
+    "Data Structures"
+];
+
+let dropdown = document.getElementById("subject");
+
+subjects.forEach(function(subject) {
+    let option = document.createElement("option");
+
+    option.textContent = subject;
+    option.value = subject;
+
+    dropdown.appendChild(option);
+});
+</script>
+
+</body>
+</html>

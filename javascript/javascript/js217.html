@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Preview</title>
+</head>
+<body>
+
+    <h2>Student Form</h2>
+
+    Name:
+    <input type="text" id="name">
+
+    <br><br>
+
+    Email:
+    <input type="text" id="email">
+
+    <br><br>
+
+    Course:
+    <input type="text" id="course">
+
+    <br><br>
+
+    <button onclick="preview()">Preview</button>
+
+    <h3>Preview</h3>
+
+    <p id="preview"></p>
+
+    <script>
+        function preview() {
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let course = document.getElementById("course").value;
+
+            if (name == "" || email == "" || course == "") {
+                alert("Please fill all fields.");
+                return;
+            }
+
+            document.getElementById("preview").innerHTML =
+                "Name: " + name + "<br>" +
+                "Email: " + email + "<br>" +
+                "Course: " + course;
+        }
+    </script>
+
+</body>
+</html>

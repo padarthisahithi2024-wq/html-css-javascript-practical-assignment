@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Keyboard Controlled Game</title>
+    <style>#player{position:relative;width:48px;height:48px;background:#4353ff}</style>
+</head>
+<body>
+    <main>
+        <h1>Keyboard-controlled game</h1>
+        <p>Use the arrow keys to move the square.</p>
+        <div id="player"></div>
+        <p id="output">Position: 0, 0</p>
+        <script>
+            let x = 0;
+            let y = 0;
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "ArrowRight") x += 10;
+                if (event.key === "ArrowLeft") x -= 10;
+                if (event.key === "ArrowDown") y += 10;
+                if (event.key === "ArrowUp") y -= 10;
+                document.getElementById("player").style.transform = `translate(${x}px, ${y}px)`;
+                document.getElementById("output").textContent = `Position: ${x}, ${y}`;
+            });
+        </script>
+    </main>
+</body>
+</html>

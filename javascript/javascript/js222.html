@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Fields</title>
+</head>
+<body>
+
+    <h2>Dynamic Form</h2>
+
+    <label>Select Student Type:</label>
+
+    <select id="type" onchange="showFields()">
+        <option value="">Select</option>
+        <option value="school">School Student</option>
+        <option value="college">College Student</option>
+    </select>
+
+    <br><br>
+
+    <div id="fields"></div>
+
+    <script>
+        function showFields() {
+
+            let type = document.getElementById("type").value;
+            let fields = document.getElementById("fields");
+
+            if (type == "school") {
+
+                fields.innerHTML =
+                    "School Name: " +
+                    '<input type="text" id="school"><br><br>' +
+                    "Class: " +
+                    '<input type="text" id="class">';
+
+            }
+            else if (type == "college") {
+
+                fields.innerHTML =
+                    "College Name: " +
+                    '<input type="text" id="college"><br><br>' +
+                    "Course: " +
+                    '<input type="text" id="course">';
+
+            }
+            else {
+
+                fields.innerHTML = "";
+            }
+        }
+    </script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Fields</title>
+</head>
+<body>
+
+    <h2>Dynamic Form</h2>
+
+    <label>Select Student Type:</label>
+
+    <select id="type" onchange="showFields()">
+        <option value="">Select</option>
+        <option value="school">School Student</option>
+        <option value="college">College Student</option>
+    </select>
+
+    <br><br>
+
+    <div id="fields"></div>
+
+    <script>
+        function showFields() {
+
+            let type = document.getElementById("type").value;
+            let fields = document.getElementById("fields");
+
+            if (type == "school") {
+
+                fields.innerHTML =
+                    "School Name: " +
+                    '<input type="text" id="school"><br><br>' +
+                    "Class: " +
+                    '<input type="text" id="class">';
+
+            }
+            else if (type == "college") {
+
+                fields.innerHTML =
+                    "College Name: " +
+                    '<input type="text" id="college"><br><br>' +
+                    "Course: " +
+                    '<input type="text" id="course">';
+
+            }
+            else {
+
+                fields.innerHTML = "";
+            }
+        }
+    </script>
+
+</body>
+</html>

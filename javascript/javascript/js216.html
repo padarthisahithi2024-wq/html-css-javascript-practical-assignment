@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi Step Registration</title>
+</head>
+<body>
+
+    <h2>Multi-Step Registration</h2>
+
+    <div id="step1">
+
+        <h3>Step 1 - Personal Details</h3>
+
+        Name:
+        <input type="text" id="name">
+
+        <br><br>
+
+        Age:
+        <input type="number" id="age">
+
+        <br><br>
+
+        <button onclick="nextStep()">Next</button>
+
+    </div>
+
+    <div id="step2" style="display:none;">
+
+        <h3>Step 2 - Contact Details</h3>
+
+        Email:
+        <input type="text" id="email">
+
+        <br><br>
+
+        Mobile:
+        <input type="text" id="mobile">
+
+        <br><br>
+
+        <button onclick="submitForm()">Submit</button>
+
+    </div>
+
+    <script>
+        function nextStep() {
+
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+
+            if (name == "" || age == "") {
+                alert("Fill all fields.");
+                return;
+            }
+
+            document.getElementById("step1").style.display = "none";
+            document.getElementById("step2").style.display = "block";
+        }
+
+        function submitForm() {
+
+            let email = document.getElementById("email").value;
+            let mobile = document.getElementById("mobile").value;
+
+            if (email == "" || mobile == "") {
+                alert("Fill all fields.");
+                return;
+            }
+
+            alert("Registration completed.");
+        }
+    </script>
+
+</body>
+</html>

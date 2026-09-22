@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sort an Array</title>
+</head>
+<body>
+    <h1>Sort an array</h1>
+    <p id="output"></p>
+    <script>
+        const values = [42, 7, 19, 84, 13];
+        const sortedValues = [...values].sort((first, second) => first - second);
+        document.getElementById("output").textContent = `Sorted array: ${sortedValues.join(", ")}`;
+    </script>
+</body>
+</html>

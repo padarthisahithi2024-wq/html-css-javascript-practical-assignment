@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Admission</title>
+</head>
+<body>
+
+    <h2>College Admission Form</h2>
+
+    <form onsubmit="return admission()">
+
+        Name:
+        <input type="text" id="name">
+        <br><br>
+
+        Age:
+        <input type="number" id="age">
+        <br><br>
+
+        Email:
+        <input type="text" id="email">
+        <br><br>
+
+        Mobile:
+        <input type="text" id="mobile">
+        <br><br>
+
+        Course:
+        <select id="course">
+            <option value="">Select Course</option>
+            <option>B.Tech</option>
+            <option>BCA</option>
+            <option>B.Sc</option>
+        </select>
+
+        <br><br>
+
+        Gender:
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+
+        <br><br>
+
+        <button type="submit">Apply</button>
+
+    </form>
+
+    <script>
+        function admission() {
+
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let email = document.getElementById("email").value;
+            let mobile = document.getElementById("mobile").value;
+            let course = document.getElementById("course").value;
+
+            let gender =
+                document.querySelector('input[name="gender"]:checked');
+
+            let namePattern = /^[A-Za-z ]+$/;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let mobilePattern = /^[0-9]{10}$/;
+
+            if (!namePattern.test(name)) {
+                alert("Enter a valid name.");
+                return false;
+            }
+
+            if (age < 17 || age > 30) {
+                alert("Age must be between 17 and 30.");
+                return false;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert("Enter a valid email.");
+                return false;
+            }
+
+            if (!mobilePattern.test(mobile)) {
+                alert("Enter a valid 10 digit mobile number.");
+                return false;
+            }
+
+            if (course == "") {
+                alert("Select a course.");
+                return false;
+            }
+
+            if (gender == null) {
+                alert("Select gender.");
+                return false;
+            }
+
+            alert("Admission form submitted successfully.");
+            return false;
+        }
+    </script>
+
+</body>
+</html>

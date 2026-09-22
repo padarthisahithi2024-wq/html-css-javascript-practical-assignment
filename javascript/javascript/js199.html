@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Required Field Validation</title>
+</head>
+<body>
+
+    <h2>Required Field Validation</h2>
+
+    <form onsubmit="return validateForm()">
+
+        Name:
+        <input type="text" id="name">
+        <br><br>
+
+        Email:
+        <input type="email" id="email">
+        <br><br>
+
+        Mobile:
+        <input type="text" id="mobile">
+        <br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <script>
+        function validateForm() {
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let mobile = document.getElementById("mobile").value.trim();
+
+            if (name == "") {
+                alert("Name is required.");
+                return false;
+            }
+
+            if (email == "") {
+                alert("Email is required.");
+                return false;
+            }
+
+            if (mobile == "") {
+                alert("Mobile number is required.");
+                return false;
+            }
+
+            alert("Form submitted successfully.");
+            return true;
+        }
+    </script>
+
+</body>
+</html>

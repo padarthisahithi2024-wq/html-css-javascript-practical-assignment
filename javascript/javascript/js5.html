@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Number Sign</title>
+</head>
+<body>
+    <h1>Positive, negative, or zero</h1>
+    <p id="output"></p>
+    <script>
+        const number = -8;
+        let classification = "Zero";
+        if (number > 0) {
+            classification = "Positive";
+        } else if (number < 0) {
+            classification = "Negative";
+        }
+        document.getElementById("output").textContent = `${number} is ${classification}.`;
+    </script>
+</body>
+</html>

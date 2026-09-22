@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="js-lab.css">
+    <title>Keyboard Events</title>
+</head>
+<body>
+    <main>
+        <h1>Keyboard events</h1>
+        <input id="keyInput" placeholder="Press a key">
+        <p id="output"></p>
+        <script>
+            document.getElementById("keyInput").addEventListener("keydown", (event) => {
+                document.getElementById("output").textContent = `Key: ${event.key}, code: ${event.code}`;
+            });
+        </script>
+    </main>
+</body>
+</html>

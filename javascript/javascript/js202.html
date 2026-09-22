@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prevent Submission</title>
+</head>
+<body>
+
+    <h2>Form Validation</h2>
+
+    <form onsubmit="return validateForm()">
+
+        Username:
+        <input type="text" id="username">
+
+        <br><br>
+
+        Password:
+        <input type="password" id="password">
+
+        <br><br>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <script>
+        function validateForm() {
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            if (username == "" || password == "") {
+                alert("Please fill all fields.");
+                return false;
+            }
+
+            alert("Form submitted.");
+            return true;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Window Object</title>
+</head>
+<body>
+
+<h2>Window Object</h2>
+
+<button onclick="showWindow()">Show Window Information</button>
+
+<p id="output"></p>
+
+<script>
+function showWindow() {
+    document.getElementById("output").innerHTML =
+        "Window Width: " + window.innerWidth + "<br>" +
+        "Window Height: " + window.innerHeight + "<br>" +
+        "Screen Width: " + screen.width + "<br>" +
+        "Screen Height: " + screen.height;
+}
+</script>
+
+</body>
+</html>

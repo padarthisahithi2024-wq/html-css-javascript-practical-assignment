@@ -1,0 +1,27 @@
+* { box-sizing: border-box; }
+:root { --ink: #172033; --muted: #687386; --line: #e3e8ef; --paper: #f6f8fb; --brand: #4353ff; --green: #158a63; }
+body { margin: 0; min-height: 100vh; font: 15px/1.5 Arial, sans-serif; color: var(--ink); background: var(--paper); }
+.page { max-width: 1180px; margin: auto; padding: 32px; }
+.card { padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: white; box-shadow: 0 8px 24px #1720330d; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.row, .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.muted { color: var(--muted); }
+.btn { border: 1px solid var(--line); border-radius: 7px; padding: 10px 15px; background: white; cursor: pointer; font-weight: 700; }
+.primary { color: white; background: var(--brand); border-color: var(--brand); }
+.stat { font-size: 30px; font-weight: 800; }
+.progress { height: 9px; overflow: hidden; border-radius: 999px; background: #e6eaf0; }
+.progress span { display: block; height: 100%; border-radius: inherit; background: var(--brand); }
+input, select, textarea { padding: 10px; border: 1px solid var(--line); border-radius: 7px; font: inherit; }
+.sticky-header { position: sticky; top: 0; z-index: 3; padding: 16px 24px; background: white; border-bottom: 1px solid var(--line); }
+.fixed-sidebar { position: fixed; inset: 0 auto 0 0; width: 220px; padding: 24px; background: #11182a; color: white; }
+.fixed-content { margin-left: 220px; padding: 32px; }
+.bottom-nav { position: fixed; right: 0; bottom: 0; left: 0; display: flex; justify-content: space-around; padding: 12px; background: white; border-top: 1px solid var(--line); }
+.footer { padding: 36px 32px; background: #11182a; color: white; }
+.hover-card { transition: transform .25s, box-shadow .25s; }
+.hover-card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px #17203322; }
+@keyframes float-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.animated-card { animation: float-in .7s ease both; }
+.slider { display: flex; gap: 18px; overflow: hidden; }
+.slide { min-width: 280px; animation: slide-card 8s infinite alternate ease-in-out; }
+@keyframes slide-card { from { transform: translateX(0); } to { transform: translateX(-180px); } }
+@media (max-width: 700px) { .page { padding: 20px; } .fixed-sidebar { width: 72px; padding: 12px; } .fixed-sidebar span { display: none; } .fixed-content { margin-left: 72px; padding: 20px; } .desktop-only { display: none; } }

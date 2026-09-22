@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drag and Drop</title>
+
+    <style>
+        #box {
+            width: 100px;
+            padding: 30px;
+            background: lightblue;
+            text-align: center;
+            cursor: move;
+        }
+
+        #dropZone {
+            width: 300px;
+            height: 150px;
+            margin-top: 30px;
+            border: 2px dashed black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Drag and Drop</h2>
+
+    <div id="box" draggable="true">
+        Drag Me
+    </div>
+
+    <div id="dropZone">
+        Drop Here
+    </div>
+
+    <p id="output"></p>
+
+    <script>
+        const box = document.getElementById("box");
+        const dropZone = document.getElementById("dropZone");
+
+        box.addEventListener("dragstart", function(event) {
+            event.dataTransfer.setData("text", "box");
+        });
+
+        dropZone.addEventListener("dragover", function(event) {
+            event.preventDefault();
+        });
+
+        dropZone.addEventListener("drop", function(event) {
+            event.preventDefault();
+
+            const data = event.dataTransfer.getData("text");
+
+            if (data === "box") {
+                dropZone.appendChild(box);
+
+                document.getElementById("output").textContent =
+                    "Item dropped successfully!";
+            }
+        });
+    </script>
+
+</body>
+</html>

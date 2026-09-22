@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regular Expression Validation</title>
+</head>
+<body>
+
+    <h2>Regular Expression Validation</h2>
+
+    <input type="text" id="name" placeholder="Name">
+
+    <br><br>
+
+    <input type="text" id="mobile" placeholder="10 digit mobile">
+
+    <br><br>
+
+    <button onclick="validateForm()">Validate</button>
+
+    <script>
+        function validateForm() {
+
+            let name = document.getElementById("name").value;
+            let mobile = document.getElementById("mobile").value;
+
+            let namePattern = /^[A-Za-z ]+$/;
+            let mobilePattern = /^[0-9]{10}$/;
+
+            if (!namePattern.test(name)) {
+                alert("Invalid name.");
+                return;
+            }
+
+            if (!mobilePattern.test(mobile)) {
+                alert("Invalid mobile number.");
+                return;
+            }
+
+            alert("All fields are valid.");
+        }
+    </script>
+
+</body>
+</html>

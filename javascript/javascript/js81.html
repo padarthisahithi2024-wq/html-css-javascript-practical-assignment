@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dependent Dropdown</title>
+</head>
+<body>
+
+<h2>Country → State → City</h2>
+
+<select id="country" onchange="loadStates()">
+    <option value="">Select Country</option>
+    <option value="india">India</option>
+    <option value="usa">USA</option>
+</select>
+
+<br><br>
+
+<select id="state" onchange="loadCities()">
+    <option value="">Select State</option>
+</select>
+
+<br><br>
+
+<select id="city">
+    <option value="">Select City</option>
+</select>
+
+<script>
+let data = {
+    india: {
+        andhra: ["Markapur", "Vijayawada", "Visakhapatnam"],
+        tamilnadu: ["Chennai", "Madurai", "Coimbatore"]
+    },
+
+    usa: {
+        california: ["Los Angeles", "San Francisco", "San Diego"],
+        texas: ["Houston", "Dallas", "Austin"]
+    }
+};
+
+function loadStates() {
+    let country = document.getElementById("country").value;
+    let state = document.getElementById("state");
+
+    state.innerHTML = "<option value=''>Select State</option>";
+
+    if (country !== "") {
+        for (let stateName in data[country]) {
+            let option = document.createElement("option");
+
+            option.value = stateName;
+            option.textContent = stateName;
+
+            state.appendChild(option);
+        }
+    }
+
+    document.getElementById("city").innerHTML =
+        "<option value=''>Select City</option>";
+}
+
+function loadCities() {
+    let country = document.getElementById("country").value;
+    let state = document.getElementById("state").value;
+    let city = document.getElementById("city");
+
+    city.innerHTML = "<option value=''>Select City</option>";
+
+    if (country !== "" && state !== "") {
+        data[country][state].forEach(function(cityName) {
+            let option = document.createElement("option");
+
+            option.value = cityName;
+            option.textContent = cityName;
+
+            city.appendChild(option);
+        });
+    }
+}
+</script>
+
+</body>
+</html>

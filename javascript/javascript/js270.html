@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24. Student Marks Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="brand">WEB STORAGE LAB</div>
+    <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Programs</a>
+    </div>
+</div>
+
+<section class="hero">
+    <h1>24. Student Marks Database Using localStorage</h1>
+    <p>Web Storage • Working JavaScript Demonstration</p>
+</section>
+
+<main class="container">
+<section class="card">
+
+<h2>Program Description</h2>
+<p>Stores student names and marks in localStorage.</p>
+
+<div class="demo">
+    <input id="name" placeholder="Student name">
+    <input id="marks" type="number" placeholder="Marks">
+
+    <button onclick="addStudent()">Add Student</button>
+    <button onclick="showStudents()">Display Records</button>
+
+    <div id="out" class="output"></div>
+</div>
+
+<div class="page-nav">
+    <a href="23.html">‹ Prev</a>
+    <a class="middle" href="index.html">☰ All Programs</a>
+    <a href="25.html">Next ›</a>
+</div>
+
+</section>
+</main>
+
+<footer>Web Storage Project • Program 24 of 25</footer>
+
+<script>
+function addStudent() {
+
+    let students =
+        JSON.parse(localStorage.getItem("marksDatabase")) || [];
+
+    let student = {
+        name: document.getElementById("name").value,
+        marks: document.getElementById("marks").value
+    };
+
+    students.push(student);
+
+    localStorage.setItem(
+        "marksDatabase",
+        JSON.stringify(students)
+    );
+
+    document.getElementById("out").textContent =
+        "Student marks saved successfully.";
+}
+
+function showStudents() {
+
+    let students =
+        JSON.parse(localStorage.getItem("marksDatabase")) || [];
+
+    document.getElementById("out").innerHTML =
+        students.map(function(student) {
+            return "Name: " + student.name +
+                   " | Marks: " + student.marks;
+        }).join("<br>");
+}
+</script>
+
+</body>
+</html>

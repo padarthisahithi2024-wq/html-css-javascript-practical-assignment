@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser Information</title>
+</head>
+<body>
+
+<h2>Browser Information</h2>
+
+<p id="info"></p>
+
+<script>
+document.getElementById("info").innerHTML =
+    "Browser User Agent:<br>" +
+    navigator.userAgent + "<br><br>" +
+
+    "Browser Language: " +
+    navigator.language + "<br><br>" +
+
+    "Platform: " +
+    navigator.platform;
+</script>
+
+</body>
+</html>
